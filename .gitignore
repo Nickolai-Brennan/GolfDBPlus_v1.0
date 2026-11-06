@@ -1,0 +1,15 @@
+# Environment and credentials
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Copyrighted/downloaded raw documents: keep out of public GitHub
+Assets/Events/**/Documents/
+Assets/Events/**/Transcripts/original/
+Assets/Events/**/manifest.json
+data/raw/
+downloads/
