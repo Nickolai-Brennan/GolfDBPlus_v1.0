@@ -1,4 +1,4 @@
-# Developer Actions and Workflows
+# Actions and Workflows
 
 ## Workflow A — PGA Event Document Collector
 1. Select tour, season and event from GolfDB+ registry.
