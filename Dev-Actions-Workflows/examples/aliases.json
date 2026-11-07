@@ -1,5 +1,0 @@
-{
-  "players": [{"id": "00000000-0000-0000-0000-000000000001", "aliases": ["Example Player"]}],
-  "events": [{"id": "00000000-0000-0000-0000-000000000002", "aliases": ["World Wide Technology Championship"]}],
-  "courses": [{"id": "00000000-0000-0000-0000-000000000003", "aliases": ["Example Golf Club"]}]
-}
