@@ -3,7 +3,7 @@
 **Document:** `docs/PROJECT_ENVIRONMENT_STARTUP.md`  
 **Project:** [GolfDBPlus_v1.0](https://github.com/Nickolai-Brennan/GolfDBPlus_v1.0)  
 **Status:** Architecture decision and workstation setup guide, not proof of installed software  
-**Updated:** 2026-11-06  
+**Updated:** 2026-11-07
 **Target developer:** Solo Windows operator; commands use PowerShell unless marked otherwise
 
 ## 1. Product boundaries
@@ -17,6 +17,8 @@ GolfDB+ has three primary application sections:
 The primary master entity registry contains `players_tracking`, `courses`, `events`, `tours`, `seasons` and related source and document tables. GolfDB+ UUIDs are authoritative; DataGolf/PGA TOUR/ESPN/CBS/RickRunGood IDs are attributes for matching external records. A tour is one of `PGA`, `DP`, `LIV`, `SEN`, `ASIA`; season format is `YYYY-TOUR`, e.g. `2026-PGA`.
 
 **Repository audit:** At documentation time the repository contains SQL foundation schema, collector/indexing Python scripts, asset placeholders, data catalog, product scope docs and operator runbook. It **does not yet contain an implemented React frontend, a FastAPI server, application package manifests, an Alembic migration setup, a Docker Compose stack, CI test suite or an operational deployed website**. All tools below are either existing, recommended or deferred as explicitly indicated.
+
+The [page inventory](PAGE_INVENTORY.md) covers the separate static demo and planned application pages. See the [database guide](../Database/Design/readme.md) for the core dictionary migration.
 
 ## 2. Architecture overview
 
@@ -130,7 +132,8 @@ GolfDBPlus_v1.0/
 │   └── examples/
 ├── Custom-Products/               [existing]
 ├── Design/Database/SQL/
-│   └── 001_golfdb_foundation.sql  [existing]
+│   ├── 001_golfdb_foundation.sql  [existing]
+│   └── 002_core_reference.sql     [existing]
 ├── docs/
 │   └── PROJECT_ENVIRONMENT_STARTUP.md [this guide]
 ├── frontend/                       [proposed React+TS/Vite]
@@ -229,6 +232,7 @@ The existing schema uses PostgreSQL `pgcrypto` for UUID creation; it is designed
 # Set this ONLY in the local terminal/session, with your actual development DB values.
 $env:DATABASE_URL = "postgresql://golfdb_dev:YOUR_LOCAL_PASSWORD@localhost:5432/golfdb_dev"
 psql $env:DATABASE_URL -v ON_ERROR_STOP=1 -f Design/Database/SQL/001_golfdb_foundation.sql
+psql $env:DATABASE_URL -v ON_ERROR_STOP=1 -f Design/Database/SQL/002_core_reference.sql
 psql $env:DATABASE_URL -c 'SELECT "tourID", tour_name FROM tours ORDER BY "tourID";'
 ```
 

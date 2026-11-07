@@ -23,5 +23,6 @@ These sample aliases are **not real IDs**; replace with verified records from Go
 ## Database setup
 ```bash
 psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f Design/Database/SQL/001_golfdb_foundation.sql
+psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f Design/Database/SQL/002_core_reference.sql
 ```
 No DB migration has been executed by this commit. Add automated tests and a production backend connection before accepting imports.

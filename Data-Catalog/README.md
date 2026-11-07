@@ -27,6 +27,10 @@ Feature store, time-aware training datasets, run metadata, predictions, calibrat
 | event_documents | document_id UUID | source URL, hash | download state, license, publication date |
 | content_items | content_id UUID | canonical URL, hash | full text, entity associations, publish date |
 
+## Core reference data
+
+The [database guide](../Database/Design/readme.md) maps the design dictionary to executable SQL and describes which lookups the current schema enforces. The [page inventory](../docs/PAGE_INVENTORY.md) maps the registry and planned facts to application views.
+
 ## Data lineage contract
 Each raw file must register source_system, original_url, discovered_at, retrieved_at, content_type, sha256, bytes, license/access status, stored_path, parser_version, and extraction status. Store original and parsed layers separately. A URL alone is not evidence of permission to redistribute.
 
