@@ -1,0 +1,50 @@
+tournament_id,tournament_name,year,month,display_date,status,purse,fedex_cup_points,champion,champion_earnings,course_name,city,state,country,tournament_site_url
+R2026006,Sony Open in Hawaii,2026,January,Jan 15 - 18,COMPLETED,"$9,100,000",500 pts,Chris Gotterup,"$1,638,000",Waialae Country Club,Honolulu,HI,United States of America,https://www.sonyopeninhawaii.com
+R2026002,The American Express,2026,January,Jan 22 - 25,COMPLETED,"$9,200,000",500 pts,Scottie Scheffler,"$1,656,000",Pete Dye Stadium Course,La Quinta,CA,United States of America,https://www.theamexgolf.com
+R2026004,Farmers Insurance Open,2026,January,Jan 29 - Feb 1,COMPLETED,"$9,600,000",500 pts,Justin Rose,"$1,728,000",Torrey Pines Golf Course (South Course),San Diego,CA,United States of America,https://www.farmersinsuranceopen.com
+R2026003,WM Phoenix Open,2026,February,Feb 5 - 8,COMPLETED,"$9,600,000",500 pts,Chris Gotterup,"$1,728,000",TPC Scottsdale (Stadium Course),Scottsdale,AZ,United States of America,https://wmphoenixopen.com
+R2026005,AT&T Pebble Beach Pro-Am,2026,February,Feb 12 - 15,COMPLETED,"$20,000,000",700 pts,Collin Morikawa,"$3,600,000",Pebble Beach Golf Links,Pebble Beach,CA,United States of America,https://www.attpbgolf.com
+R2026007,The Genesis Invitational,2026,February,Feb 19 - 22,COMPLETED,"$20,000,000",700 pts,Jacob Bridgeman,"$4,000,000",The Riviera Country Club,Pacific Palisades,CA,United States of America,https://genesisinvitational.com
+R2026010,Cognizant Classic in The Palm Beaches,2026,February,Feb 26 - Mar 1,COMPLETED,"$9,600,000",500 pts,Nico Echavarria,"$1,728,000",PGA National - Champion Course,Palm Beach Gardens,FL,United States of America,https://thecognizantclassic.com/
+R2026009,Arnold Palmer Invitational presented by Mastercard,2026,March,Mar 5 - 8,COMPLETED,"$20,000,000",700 pts,Akshay Bhatia,"$4,000,000",Arnold Palmer's Bay Hill Club & Lodge,Orlando,FL,United States of America,https://arnoldpalmerinvitational.com
+R2026483,Puerto Rico Open,2026,March,Mar 5 - 8,COMPLETED,"$4,000,000",300 pts,Ricky Castillo,"$720,000",Grand Reserve Golf Club,Rio Grande,,Puerto Rico,https://www.puertoricoopen.golf/index.php
+R2026011,THE PLAYERS Championship,2026,March,Mar 12 - 15,COMPLETED,"$25,000,000",750 pts,Cameron Young,"$4,500,000",TPC Sawgrass - THE PLAYERS Stadium Course,Ponte Vedra Beach,FL,United States of America,https://www.theplayers.com
+R2026475,Valspar Championship,2026,March,Mar 19 - 22,COMPLETED,"$9,100,000",500 pts,Matt Fitzpatrick,"$1,638,000",Innisbrook Resort and Golf Club - Copperhead Course,Palm Harbor,FL,United States of America,https://valsparchampionship.com
+R2026020,Texas Children's Houston Open,2026,March,Mar 26 - 29,COMPLETED,"$9,900,000",500 pts,Gary Woodland,"$1,782,000",Memorial Park Golf Course,Houston,TX,United States of America,https://www.tchouopen.com/
+R2026041,Valero Texas Open,2026,April,Apr 2 - 5,COMPLETED,"$9,800,000",500 pts,J.J. Spaun,"$1,764,000",TPC San Antonio - The Oaks Course,San Antonio,TX,United States of America,https://valerotexasopen.com
+R2026014,Masters Tournament,2026,April,Apr 9 - 12,COMPLETED,"$22,500,000",750 pts,Rory McIlroy,"$4,500,000",Augusta National Golf Club,Augusta,GA,United States of America,
+R2026012,RBC Heritage,2026,April,Apr 16 - 19,COMPLETED,"$20,000,000",700 pts,Matt Fitzpatrick,"$3,600,000",Harbour Town Golf Links,Hilton Head Island,SC,United States of America,https://rbcheritage.com
+R2026018,Zurich Classic of New Orleans,2026,April,Apr 23 - 26,COMPLETED,"$9,500,000",400 pts,Matt Fitzpatrick,"$1,372,750",TPC Louisiana,Avondale,LA,United States of America,https://zurichgolfclassic.com
+R2026556,Cadillac Championship,2026,April,Apr 30 - May 3,COMPLETED,"$20,000,000",700 pts,Cameron Young,"$3,600,000",Trump National Doral - Blue Monster Course,Miami,FL,United States of America,https://www.cadillacchampionship.com/
+R2026480,Truist Championship,2026,May,May 7 - 10,COMPLETED,"$20,000,000",700 pts,Kristoffer Reitan,"$3,600,000",Quail Hollow Club,Charlotte,NC,United States of America,https://www.truistchampionship.com/
+R2026553,ONEflight Myrtle Beach Classic,2026,May,May 7 - 10,COMPLETED,"$4,000,000",300 pts,Brandt Snedeker,"$720,000",Dunes Golf and Beach Club,Myrtle Beach,SC,United States of America,https://myrtlebeachclassic.com/
+R2026033,PGA Championship,2026,May,May 14 - 17,COMPLETED,"$20,500,000",750 pts,Aaron Rai,"$3,690,000",Aronimink Golf Club,Newtown Square,PA,United States of America,
+R2026019,THE CJ CUP Byron Nelson,2026,May,May 21 - 24,COMPLETED,"$10,300,000",500 pts,Wyndham Clark,"$1,854,000",TPC Craig Ranch,McKinney,TX,United States of America,https://thecjcupbyronnelson.org/
+R2026021,Charles Schwab Challenge,2026,May,May 28 - 31,COMPLETED,"$9,900,000",500 pts,Russell Henley,"$1,782,000",Colonial Country Club,Fort Worth,TX,United States of America,https://www.charlesschwabchallenge.com/
+R2026023,the Memorial Tournament presented by Workday,2026,June,Jun 4 - 7,COMPLETED,"$20,000,000",700 pts,J.T. Poston,"$4,000,000",Muirfield Village Golf Club,Dublin,OH,United States of America,https://www.thememorialtournament.com/
+R2026032,RBC Canadian Open,2026,June,Jun 11 - 14,COMPLETED,"$9,800,000",500 pts,Bud Cauley,"$1,764,000",TPC Toronto at Osprey Valley - North Course,"Caledon, Ontario",,Canada,https://www.rbccanadianopen.com/
+R2026026,U.S. Open,2026,June,Jun 18 - 21,COMPLETED,"$22,500,000",750 pts,Wyndham Clark,"$4,500,000",Shinnecock Hills Golf Club,Southampton,NY,United States of America,
+R2026034,Travelers Championship,2026,June,Jun 25 - 28,COMPLETED,"$20,000,000",700 pts,Viktor Hovland,"$3,600,000",TPC River Highlands,Cromwell,CT,United States of America,https://travelerschampionship.com/
+R2026030,John Deere Classic,2026,July,Jul 2 - 5,COMPLETED,"$8,800,000",500 pts,Chris Gotterup,"$1,584,000",TPC Deere Run,Silvis,IL,United States of America,https://johndeereclassic.com
+R2026541,Genesis Scottish Open,2026,July,Jul 9 - 12,COMPLETED,"$9,000,000",500 pts,Tom Kim,"$1,575,000",The Renaissance Club,North Berwick,,Scotland,https://www.europeantour.com/dpworld-tour/genesis-scottish-open-2025/
+R2026518,ISCO Championship,2026,July,Jul 9 - 12,COMPLETED,"$4,000,000",300 pts,Steven Fisk,"$720,000",Hurstbourne Country Club,Louisville,KY,United States of America,https://iscochampionship.com/
+R2026100,The Open Championship,2026,July,Jul 16 - 19,COMPLETED,"$17,750,000",750 pts,Ryan Fox,"$3,200,000",Royal Birkdale Golf Club,Southport,,England,
+R2026522,Corales Puntacana Championship,2026,July,Jul 16 - 19,COMPLETED,"$4,000,000",300 pts,Stefano Mazzoli,"$720,000",Puntacana Resort & Club (Corales Golf Course),Punta Cana,,Dominican Republic,https://www.puntacana.com/en/golf/corales-championship
+R2026525,3M Open,2026,July,Jul 23 - 26,COMPLETED,"$8,800,000",500 pts,Jackson Koivun,"$1,584,000",TPC Twin Cities,Blaine,MN,United States of America,https://3mopen.com
+R2026524,Rocket Classic,2026,July,Jul 30 - Aug 2,COMPLETED,"$10,000,000",500 pts,Michael Thorbjornsen,"$1,800,000",Detroit Golf Club,Detroit,MI,United States of America,http://www.rocketclassic.com/
+R2026013,Wyndham Championship,2026,August,Aug 6 - 9,COMPLETED,"$8,500,000",500 pts,Michael Brennan,"$1,530,000",Sedgefield Country Club,Greensboro,NC,United States of America,https://www.wyndhamchampionship.com
+R2026027,FedEx St. Jude Championship,2026,August,Aug 13 - 16,COMPLETED,"$20,000,000",750 pts,Scottie Scheffler,"$3,600,000",TPC Southwind,Memphis,TN,United States of America,https://www.fedexchampionship.com/
+R2026028,BMW Championship,2026,August,Aug 20 - 23,COMPLETED,"$20,000,000",750 pts,Wyndham Clark,"$3,600,000",Bellerive Country Club,St. Louis,MO,United States of America,https://bmwchampionship.com/
+R2026060,TOUR Championship,2026,August,Aug 27 - 30,COMPLETED,"$40,000,000",,Scottie Scheffler,"$10,000,000",East Lake Golf Club,Atlanta,GA,United States of America,https://www.tourchampionship.com/
+R2026557,Biltmore Championship Asheville,2026,September,Sep 17 - 20,COMPLETED,"$5,000,000",500 pts,Jacob Bridgeman,"$900,000",The Cliffs at Walnut Cove,Asheville,NC,United States of America,https://biltmorechampionship.com/
+R2026500,Presidents Cup,2026,September,Sep 24 - 27,UPCOMING,$0,,United States,,Medinah CC (No. 3),Chicago,IL,United States of America,https://www.presidentscup.com
+R2026554,Bank of Utah Championship,2026,October,Oct 1 - 4,UPCOMING,"$6,000,000",500 pts,Michael Brennan,"$1,080,000",Black Desert Resort,Ivins,UT,United States of America,
+R2026527,Baycurrent Classic,2026,October,Oct 8 - 11,UPCOMING,"$8,000,000",500 pts,Xander Schauffele,"$1,440,000",Yokohama Country Club,Yokohama,,Japan,https://baycurrentclassic.com/
+R2026528,Butterfield Bermuda Championship,2026,October,Oct 22 - 25,UPCOMING,"$6,000,000",500 pts,Adam Schenk,"$1,080,000",Port Royal Golf Course,Southampton,,Bermuda,
+R2026540,VidantaWorld Mexico Open,2026,October,Oct 29 - Nov 1,UPCOMING,"$6,000,000",500 pts,Brian Campbell,"$1,260,000",Vidanta Vallarta,Vallarta,,Mexico,https://mexicoopen.vidantaworld.com/en
+R2026457,World Wide Technology Championship,2026,November,Nov 5 - 8,UPCOMING,"$6,000,000",500 pts,Ben Griffin,"$1,080,000",El Cardonal at Diamante,Los Cabos,,Mexico,
+R2026558,Austin Championship,2026,November,Nov 12 - 15,UPCOMING,"$6,000,000",500 pts,,,Omni Barton Creek Resort & Spa (Fazio Canyons Course),Austin,TX,United States of America,
+R2026493,The RSM Classic,2026,November,Nov 19 - 22,UPCOMING,"$7,400,000",500 pts,Sami Valimaki,"$1,260,000",Sea Island Golf Club (Seaside Course),St. Simons Island,GA,United States of America,
+R2026478,Hero World Challenge,2026,December,Dec 3 - 6,UPCOMING,"$5,000,000",,Hideki Matsuyama,"$1,000,000",Albany GC,Albany,,Bahamas,
+R2026088,PGA TOUR Q-School presented by Korn Ferry,2026,December,Dec 10 - 13,UPCOMING,"$1,200,000",,A.J. Ewart,"$50,000",Dye's Valley Course,Ponte Vedra Beach,FL,United States of America,
+R2026551,Grant Thornton Invitational,2026,December,Dec 11 - 13,UPCOMING,"$4,100,000",,Andrew Novak,"$500,000",Tiburón Golf Club,Naples,FL,United States of America,https://grantthorntoninvitational.com/

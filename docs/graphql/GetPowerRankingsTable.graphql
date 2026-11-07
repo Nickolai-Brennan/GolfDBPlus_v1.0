@@ -1,0 +1,6 @@
+query GetPowerRankingsTable($path: String!) {
+ getPowerRankingsTable(path: $path) {
+  tournamentName tableTitle
+  powerRankingsTableRow { player { id firstName lastName countryName countryFlag headshot } rank comment }
+ }
+}

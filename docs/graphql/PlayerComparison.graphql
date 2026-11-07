@@ -1,0 +1,37 @@
+query PlayerComparison(
+  $tourCode: TourCode!
+  $playerIds: [String!]!
+  $category: PlayerComparisonCategory
+  $year: Int
+  $tournamentId: String
+) {
+  playerComparison(
+    tourCode: $tourCode
+    playerIds: $playerIds
+    category: $category
+    year: $year
+    tournamentId: $tournamentId
+  ) {
+    category
+    year
+    table {
+      header
+      headerRow {
+        playerId
+        displayText
+        country
+        yearData
+      }
+      rows {
+        statName
+        statId
+        values {
+          displayValue
+          bold
+          rankDeviation
+          rank
+        }
+      }
+    }
+  }
+}

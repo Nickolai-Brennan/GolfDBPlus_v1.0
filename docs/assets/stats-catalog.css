@@ -1,0 +1,18 @@
+.stats-catalog [hidden] { display: none !important; }
+.stats-controls { display: flex; flex-wrap: wrap; gap: .7rem; align-items: end; }
+.stats-controls label { display: flex; flex: 1 1 10rem; flex-direction: column; gap: .3rem; font-weight: 600; }
+.stats-controls label:first-child { flex-basis: 100%; }
+.stats-controls input, .stats-controls select, .stats-catalog button {
+  padding: .45rem .6rem; border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: .2rem; background: var(--md-default-bg-color); color: var(--md-default-fg-color);
+  font: inherit;
+}
+.stats-controls input, .stats-controls select { width: 100%; }
+.stats-catalog button { cursor: pointer; color: var(--md-primary-fg-color); }
+.stats-catalog :focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 2px; }
+.stats-table-scroll { overflow: auto; max-height: 36rem; }
+.stats-table-scroll table { width: 100%; }
+.stats-table-scroll th { position: sticky; top: 0; background: var(--md-default-bg-color); }
+.stats-table-scroll td:first-child { white-space: nowrap; }
+.stats-catalog [data-copy] { font-size: .65rem; padding: .15rem .3rem; }
+.stats-catalog [data-copy-status]:empty { display: none; }

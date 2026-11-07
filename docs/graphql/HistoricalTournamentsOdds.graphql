@@ -1,0 +1,6 @@
+query HistoricalTournamentsOdds($tournamentId: String!, $marketId: OddsMarketType!, $timeStamp: AWSDateTime) {
+  historicalTournamentsOdds(tournamentId: $tournamentId, marketId: $marketId, timeStamp: $timeStamp) {
+    id provider tournamentId message { header body }
+    market { header subMarketPills marketType subMarkets { id header options { __typename } } }
+  }
+}
