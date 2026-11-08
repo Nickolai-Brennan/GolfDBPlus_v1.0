@@ -1,25 +1,20 @@
 # GolfDB+ database design
 
-The [reference dictionary](../Reference_Dictionary.sql) is a design input containing prose, field lists, and sample SQL. Run the numbered migrations under [Design/Database/SQL](../../Design/Database/SQL).
-
-## Apply in order
-
-Use a PostgreSQL 15+ database with the foundation tables in `public`.
+The [reference dictionary](Reference_Dictionary.sql) is a research input with field lists and sample SQL. Apply the [canonical migrations](Schema/README.md) using PostgreSQL 15+.
 
 ```bash
-psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f Design/Database/SQL/001_golfdb_foundation.sql
-psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f Design/Database/SQL/002_core_reference.sql
+psql "$DATABASE_URL" -f Database/Schema/install.psql
 ```
 
-For an existing foundation database, apply only 002. Migration 002 is transactional. It uses stable codes and keeps existing reference rows on replay. The role needs permission to create the `core` schema and alter the existing event and course tables.
+The core migration uses stable codes and preserves existing reference rows on replay. The [data catalog](Data-Catalog/README.md) documents incoming provider mappings, scoring grains and read queries.
 
 | Dictionary area | Implemented storage | Use |
 | --- | --- | --- |
 | Geography and time zones | `core.continents`, `core.countries`, `core.states_provinces`, `core.time_zones` | Continents and PostgreSQL zone names are seeded. Load reviewed country and subdivision data separately. Sporting nationality may differ from ISO codes |
 | Units | `core.measurement_units` | Stable codes and display symbols, including shot speed, spin, distance, and green area. Store currency separately from monetary amounts |
 | Competition | `core.event_types`, `core.event_statuses`, `core.cut_rules` | Nullable FKs on `public.events`; existing tours and seasons remain canonical. Tour type vocabulary does not replace tour IDs |
-| Course metadata | `core.course_themes`, `core.time_zones` | Nullable FKs on `public.courses`; surfaces and terrain are reference groups until setup data exists |
-| Sources | `core.source_types`, `core.data_sources` | Starter registry. Existing source-system text remains compatible pending source crosswalks |
+| Course metadata | `core.course_themes`, `core.time_zones` | Nullable FKs on `public.courses`; surfaces and terrain are reference groups. Dated setup facts live in analytics.course_attributes |
+| Sources | `core.source_types`, `core.data_sources` | Starter registry. Existing source-system text remains compatible. Provider IDs resolve through intake mappings |
 | Other reference vocabulary | `core.lookup_values` | Time windows, weather, player/shot labels, stat types and categories, ingestion quality, model outputs, projection markets, and content. Use both `lookup_group` and `code` as the identity |
 
 ```sql

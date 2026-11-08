@@ -232,7 +232,7 @@ facts AS (
     UNION ALL
 
     SELECT 'ranking_entry:' || e.snapshot_id::text || ':' || e.player_id::text,
-           'ranking_entry', b.retrieved_at, s.source_code,
+           'ranking_entry', b.retrieved_at, b.source_code,
            'Rankings', 'Rankings', 'Player Data',
            NULL::text, NULL::smallint, NULL::bigint, NULL::text,
            NULL::bigint, NULL::text, e.player_id, p.display_name,
@@ -248,7 +248,7 @@ facts AS (
     SELECT 'fedex_entry:' || e.snapshot_id::text || ':' || e.player_id::text,
            'fedex_entry', b.retrieved_at, b.source_code,
            'Rankings', 'Rankings', 'Player Data',
-           e.tour_id, e.season, NULL::bigint, NULL::text,
+           s.tour_id, s.season, NULL::bigint, NULL::text,
            NULL::bigint, NULL::text, e.player_id, p.display_name,
            NULL::smallint, NULL::smallint, 0::bigint, 1::bigint
     FROM golf.fedex_entry e

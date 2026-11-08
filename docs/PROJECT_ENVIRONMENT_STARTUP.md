@@ -16,9 +16,9 @@ GolfDB+ has three primary application sections:
 
 The primary master entity registry contains `players_tracking`, `courses`, `events`, `tours`, `seasons` and related source and document tables. GolfDB+ UUIDs are authoritative; DataGolf/PGA TOUR/ESPN/CBS/RickRunGood IDs are attributes for matching external records. A tour is one of `PGA`, `DP`, `LIV`, `SEN`, `ASIA`; season format is `YYYY-TOUR`, e.g. `2026-PGA`.
 
-**Repository audit:** At documentation time the repository contains SQL foundation schema, collector/indexing Python scripts, asset placeholders, data catalog, product scope docs and operator runbook. It **does not yet contain an implemented React frontend, a FastAPI server, application package manifests, an Alembic migration setup, a Docker Compose stack, CI test suite or an operational deployed website**. All tools below are either existing, recommended or deferred as explicitly indicated.
+**Repository audit:** At documentation time the repository contains SQL foundation schema, collector/indexing Python scripts, asset placeholders, data catalog, product scope docs and operator runbook. It **does not yet contain an implemented React frontend, a FastAPI server, application package manifests, an Alembic migration setup, a Docker Compose stack, or an operational deployed website**. All tools below are either existing, recommended or deferred as explicitly indicated.
 
-The [page inventory](PAGE_INVENTORY.md) covers the separate static demo and planned application pages. See the [database guide](../Database/Design/readme.md) for the core dictionary migration.
+The [page inventory](PAGE_INVENTORY.md) covers the separate static demo and planned application pages. See the [database guide](../Database/Reference-DB-Design.md) for the core dictionary migration.
 
 ## 2. Architecture overview
 
@@ -71,7 +71,7 @@ Do **not** adopt GraphQL as a database: GraphQL is a query/API language, not a s
 | Postman / Bruno / HTTPie | Test HTTP endpoints | Optional | No |
 | Playwright | End-to-end UI tests and permitted browser adapters | Planned | Later |
 | MinIO locally / private S3-compatible storage in production | Event attachments, media and raw files | Planned | Local filesystem sufficient initially |
-| GitHub Actions | CI tests / safe schedules | Planned | After app scaffold |
+| GitHub Actions | Database and API fixture CI | Configured | Yes |
 | Redis / Celery | Distributed task queues | Deferred | No |
 | OpenSearch / pgvector | Advanced search / retrieval | Deferred | No |
 | Vercel (frontend) + managed Python host + managed Postgres | Example production deployment option | Not selected or configured | No |
@@ -105,7 +105,7 @@ Keep initial dependencies narrow; introduce additional packages only in the phas
 | [ShotLink](https://shotlink.com/) | Shot data and reporting information | Planned source adapter | Access/rights verification |
 | [ShotLink Reports](https://reports.shotlink.com/?tc=r) | Season-event report documents | Browser-selector adapter not built | Do not bypass authentication or automation controls |
 | DataGolf | Player/course/event source IDs, performance datasets | Schema fields planned | API access/key/usage terms TBD |
-| PGA TOUR event/shot feeds | Tourcast shots, leaderboards, tee times and profiles | Relevant to shot tracking, not wired into this repo | Confirm authorization, source stability |
+| PGA TOUR event/shot feeds | Tourcast shots, leaderboards, tee times and profiles | Embedded API client and incoming SQL contracts available. Automated feed promotion pending | Confirm authorization, source stability |
 | ESPN | Player external IDs and permissible data | Mapping only | Adapter/API TBD |
 | CBS Sports | Player external IDs and permissible data | Mapping only | Adapter/API TBD |
 | RickRunGood | Player ID associations | Mapping only | Licensing/access TBD |
@@ -124,16 +124,15 @@ GolfDBPlus_v1.0/
 │   ├── Events/
 │   ├── Players/
 │   └── Courses/
-├── Data-Catalog/                   [existing]
+├── Database/                       [existing]
+│   ├── Data-Catalog/
+│   ├── Queries/
+│   └── Schema/
 ├── Dev-Actions-Workflows/          [existing]
-│   ├── event_collector.py
+│   ├── Workflows/event_collector.py
 │   ├── content_index.py
-│   ├── RUNBOOK.md
-│   └── examples/
-├── Custom-Products/               [existing]
-├── Design/Database/SQL/
-│   ├── 001_golfdb_foundation.sql  [existing]
-│   └── 002_core_reference.sql     [existing]
+│   └── RUNBOOK.md
+├── PGA-Tour-Data-API/               [existing]
 ├── docs/
 │   └── PROJECT_ENVIRONMENT_STARTUP.md [this guide]
 ├── frontend/                       [proposed React+TS/Vite]
@@ -154,7 +153,7 @@ GolfDBPlus_v1.0/
 ├── models/                         [proposed modeling code]
 ├── infra/                          [proposed Compose/deployment configs]
 ├── .env.example                    [proposed, no secrets]
-└── .github/workflows/              [proposed CI]
+└── .github/workflows/              [database and API fixture CI]
 ```
 
 The existing `Assets/Events`, `Assets/Players`, and `Assets/Courses` are not yet uniformly organized with canonical slug+UUID naming. During migration, never replace or delete preexisting assets without inventory.
@@ -231,8 +230,8 @@ The existing schema uses PostgreSQL `pgcrypto` for UUID creation; it is designed
 ```powershell
 # Set this ONLY in the local terminal/session, with your actual development DB values.
 $env:DATABASE_URL = "postgresql://golfdb_dev:YOUR_LOCAL_PASSWORD@localhost:5432/golfdb_dev"
-psql $env:DATABASE_URL -v ON_ERROR_STOP=1 -f Design/Database/SQL/001_golfdb_foundation.sql
-psql $env:DATABASE_URL -v ON_ERROR_STOP=1 -f Design/Database/SQL/002_core_reference.sql
+psql $env:DATABASE_URL -v ON_ERROR_STOP=1 -f Database/Schema/001_golfdb_foundation.sql
+psql $env:DATABASE_URL -v ON_ERROR_STOP=1 -f Database/Schema/002_core_foundations.sql
 psql $env:DATABASE_URL -c 'SELECT "tourID", tour_name FROM tours ORDER BY "tourID";'
 ```
 
@@ -406,3 +405,7 @@ Do **not** deploy periodic source downloading until permission, retry/rate limit
 **Alternatives:** Native PostgreSQL vs Docker; local filesystem vs S3; Plotly vs ECharts; REST first vs GraphQL gateway later.  
 **Performance Considerations:** Keep source ingestion incremental, cache aggregates, normalize identifiers, partition shot-level data at sufficient scale.  
 **Maintenance Considerations:** Automated tests, dependency pins, migrations, licenses, manifests, monitoring and documented recovery procedures.
+
+## Incoming data setup
+
+Use the [canonical installer and SQL tests](../Database/Schema/README.md). The [data catalog](../Database/Data-Catalog/README.md) defines the source-to-table contracts, operational SQL, and ERD.

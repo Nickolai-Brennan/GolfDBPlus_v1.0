@@ -1,5 +1,16 @@
 # Expansion roadmap
 
+## GolfDB+ data milestones
+
+| Status | Milestone |
+| --- | --- |
+| Implemented | UUID-backed intake and identity mapping, analytics facts, and event/season/round reporting contracts. |
+| Next | Replay approved archived player rounds through an automated normalizer. Reconcile IDs, setups, and conflicting publication rows before backfill. |
+| Upstream-dependent | Verify live PGA TOUR access and refresh the endpoint coverage report. |
+| After replay | Publish V2 feature snapshots with coverage and cutoffs, then consume them in versioned V3 runs. |
+
+See the [incoming data catalog](../Database/Data-Catalog/README.md).
+
 Research date: **2026-09-25**. These additions were discovered by inspecting
 public PGA TOUR pages and their shipped query documents, then making selected
 live requests. The delivered items below are implemented in the package;

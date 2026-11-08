@@ -4,7 +4,7 @@ Run with Python 3.11+; standard library only.
 
 ## Event discovery (does not download PDFs by default)
 ```bash
-python Dev-Actions-Workflows/event_collector.py \
+python Dev-Actions-Workflows/Workflows/event_collector.py \
   --url https://pgatourmedia.pgatourhq.com/tours/2026/pgatour/worldwidetechnologychampionship \
   --transcript-url https://tee-scripts.com/pgatour/wwtchampionship-com/ \
   --out Assets/Events/2026-PGA/world-wide-technology-championship
@@ -22,7 +22,8 @@ These sample aliases are **not real IDs**; replace with verified records from Go
 
 ## Database setup
 ```bash
-psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f Design/Database/SQL/001_golfdb_foundation.sql
-psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f Design/Database/SQL/002_core_reference.sql
+psql "$DATABASE_URL" -f Database/Schema/install.psql
 ```
 No DB migration has been executed by this commit. Add automated tests and a production backend connection before accepting imports.
+
+For PGA TOUR statistics and scoring intake, see the [incoming data contract](../Database/Data-Catalog/README.md).
