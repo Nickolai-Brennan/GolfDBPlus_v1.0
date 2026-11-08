@@ -4,6 +4,7 @@
 
 - Add the canonical PostgreSQL install, provider ID crosswalks, observation staging, and player, event and course data contracts.
 - Add weighted event and season difficulty, full-event and round hole metrics, prepared intake and reporting queries, and the data catalog ERD.
+- Add player par scoring, publication history, and intake and event coverage queries.
 - Fix the embedded GraphQL runtime query directory and add SQL and API fixture CI.
 
 ## 0.3.7 — 2026-09-25

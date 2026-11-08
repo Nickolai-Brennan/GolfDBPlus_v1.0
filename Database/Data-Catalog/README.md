@@ -90,3 +90,17 @@ erDiagram
     COURSES ||--o{ COURSE_ATTRIBUTES : describes
     EVENT_COURSE ||--o{ COURSE_HOLE_SOURCE_METRICS : publishes
 ```
+
+## Exploratory and operational queries
+
+Load [explore.sql](../Queries/explore.sql) alongside the original read queries.
+
+| Area | Prepared queries |
+| --- | --- |
+| Calendar and results | `event_window`, `result_publications`, `event_venues` |
+| Player scoring and metrics | `event_round_scores`, `player_holes`, `player_par_splits`, `player_metric_history` |
+| Provider comparisons | `course_hole_source_history` |
+| Coverage and intake review | `event_coverage`, `intake_coverage`, `quarantined_records` |
+| Reference and schema discovery | `lookup_values`, `schema_columns` |
+
+[Migration 004](../Schema/004_query_views.sql) adds `analytics.player_par_scoring`, `analytics.event_data_coverage`, and `intake.observation_coverage`. Scoring uses the round-specific par when available and the event setup otherwise. Unknown par remains a separate group. Event coverage counts observed facts and publication IDs. It does not certify feed completeness. Player metric history retains provider revisions and requires an explicit metric version.

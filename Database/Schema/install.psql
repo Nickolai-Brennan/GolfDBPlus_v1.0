@@ -2,3 +2,4 @@
 \ir 001_golfdb_foundation.sql
 \ir 002_core_foundations.sql
 \ir 003_incoming_data.sql
+\ir 004_query_views.sql
