@@ -48,6 +48,25 @@ The [checked-in Parquet and TSV snapshots](../../Data/Source-Files/README.md) do
 
 [Endpoint manifest](../../PGA-Tour-Data-API/endpoint_manifest.json) · [Packaged GraphQL documents](../../PGA-Tour-Data-API/src/pga_tour_api/queries) · [API evidence and field notes](SOURCE-RESEARCH.md)
 
+## Historical player identity audit
+
+Run from the repository root with Python 3.10+.
+
+```bash
+python Database/Queries/reconcile_historical_players.py > historical-player-audit.csv
+```
+
+The audit is tied to the [checksummed source files](../../Data/Source-Files/README.md). It emits one record per results row, numbered from one after the header, and writes status counts to stderr. Use the source checksum with the row number when joining the audit back to its input.
+
+| Status | Promotion rule |
+| --- | --- |
+| `verified_datagolf` | Resolve the emitted ID using `resolve_player('datagolf', external_id)` in [intake.sql](../Queries/intake.sql). Keep the row staged if the mapping has no canonical UUID. |
+| `name_candidate` | Review the single PGA TOUR candidate against event-specific identity evidence before using it. |
+| `ambiguous_name` | Keep staged until an authoritative player ID disambiguates the candidates. |
+| `unmatched` | Keep staged pending an authoritative identity match. |
+
+The April 2021 Masters reconciliation checks the complete player set and exact round score vectors across the two TSVs. It verifies 88 Data Golf player IDs across 284 rounds. The edition-scoped Fitzpatrick alias is corroborated by the [PGA TOUR event recap](https://www.pgatour.com/tournaments/2021/masters-tournament-2021/R2021536/recap). A score conflict, conflicting source ID, or incomplete field match stops the audit before it writes rows. The wider archive uses the repository's 2026 player directory for candidate discovery only. This command does not write to PostgreSQL.
+
 ## Query catalog
 
 | File | Prepared statements |
