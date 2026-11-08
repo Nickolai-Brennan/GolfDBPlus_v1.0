@@ -62,12 +62,14 @@ The audit is tied to the [checksummed source files](../../Data/Source-Files/READ
 
 | Status | Promotion rule |
 | --- | --- |
-| `datagolf_verified_pgatour_pending` | The Data Golf ID is verified against the source rounds. Keep the result staged until its PGATourID is independently verified and mapped. |
+| `verified_pgatour` | Use the verified `pgatour_id` to resolve the canonical UUID. Keep the result staged if the database mapping is missing. |
 | `name_candidate` | Review the single PGA TOUR candidate against event-specific identity evidence before using it. |
 | `ambiguous_name` | Keep staged until an authoritative player ID disambiguates the candidates. |
 | `unmatched` | Keep staged pending an authoritative identity match. |
 
-The April 2021 Masters reconciliation checks the complete player set and exact round score vectors across the two TSVs. It verifies 88 Data Golf player IDs across 284 rounds. The edition-scoped Fitzpatrick alias is corroborated by the [PGA TOUR event recap](https://www.pgatour.com/tournaments/2021/masters-tournament-2021/R2021536/recap). A score conflict, conflicting source ID, or incomplete field match stops the audit before it writes rows. The wider archive uses the repository's 2026 player directory for candidate discovery only. This command does not write to PostgreSQL.
+The [Masters roster crosswalk](../../docs/data/masters_2021_pgatour_roster.csv) combines the [official April 2021 field list](https://pgatourmedia.pgatourhq.com/static-assets/page/files/tours/2021/pgatour/masterstournament2/updatedTournamentField/field.pdf) with PGA TOUR IDs from the individual profile URLs in the CSV. All 60 existing directory candidates agree with the profile IDs, and the profiles supply the other 28. Keep leading zeroes in these IDs. The Fitzpatrick and Osborne aliases apply only to this edition and are supported by the [PGA TOUR recap](https://www.pgatour.com/tournaments/2021/masters-tournament-2021/R2021536/recap) and [USGA Osborne article](https://www.usga.org/content/usga/home-page/articles/2021/04/us-amateur-finalists-strafaci-osborne-reunite-2021-masters.html), respectively.
+
+The audit checks that the roster, results and Data Golf round file contain the same 88 players, and compares the exact round scores across the two TSVs for all 284 rounds. Roster, ID or score conflicts stop the audit before it emits rows. The 2026 directory remains a source of candidates for other historical events. The audit does not write to PostgreSQL.
 
 ## Query catalog
 
