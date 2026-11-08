@@ -1,0 +1,16 @@
+{
+  "historicalOdds": {
+    "tournamentId": "",
+    "season": 2026,
+    "playerId": "",
+    "marketName": "",
+    "optionId": "",
+    "odds": "",
+    "oddsSwing": "CONSTANT",
+    "timeStamp": -1,
+    "message": {
+      "header": "Odds are unavailable",
+      "body": "Odds unavailable in your market"
+    }
+  }
+}

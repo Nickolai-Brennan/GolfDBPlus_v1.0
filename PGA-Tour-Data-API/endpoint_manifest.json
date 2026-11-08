@@ -1,0 +1,500 @@
+{
+  "name": "PGA TOUR unofficial browser API",
+  "verified_at": "2026-09-23",
+  "base_urls": {
+    "graphql": "https://orchestrator.pgatour.com/graphql",
+    "rest": "https://data-api.pgatour.com",
+    "config": "https://orchestrator-config.pgatour.com"
+  },
+  "endpoints": [
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "CourseStats",
+      "variables": "$tournamentId: ID!",
+      "root_field": "courseStats",
+      "query_file": "graphql/CourseStats.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "CourseStatsOverview",
+      "variables": "$tourCode: TourCode!, $year: Int",
+      "root_field": "courseStatsOverview",
+      "query_file": "graphql/CourseStatsOverview.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "Coverage",
+      "variables": "$tournamentId: ID!",
+      "root_field": "coverage",
+      "query_file": "graphql/Coverage.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "CurrentLeadersCompressed",
+      "variables": "$tournamentId: ID!",
+      "root_field": "currentLeadersCompressed",
+      "query_file": "graphql/CurrentLeadersCompressed.graphql",
+      "compressed": true
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "Field",
+      "variables": "$fieldId: ID!, $includeWithdrawn: Boolean, $changesOnly: Boolean",
+      "root_field": "field",
+      "query_file": "graphql/Field.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "FieldStats",
+      "variables": "$tournamentId: ID!, $fieldStatType: FieldStatType!",
+      "root_field": "fieldStats",
+      "query_file": "graphql/FieldStats.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "GenericContentCompressed",
+      "variables": "$path: String!",
+      "root_field": "genericContentCompressed",
+      "query_file": "graphql/GenericContentCompressed.graphql",
+      "compressed": true
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "LeaderboardCompressedV3",
+      "variables": "$leaderboardCompressedV3Id: ID!",
+      "root_field": "leaderboardCompressedV3",
+      "query_file": "graphql/LeaderboardCompressedV3.graphql",
+      "compressed": true
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "LeaderboardHoleByHole",
+      "variables": "$tournamentId: ID!, $round: Int",
+      "root_field": "leaderboardHoleByHole",
+      "query_file": "graphql/LeaderboardHoleByHole.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "NewsArticles",
+      "variables": "$tour: TourCode, $franchises: [String!], $playerIds: [ID!], $limit: Int, $offset: Int, $tags: [String!], $sectionName: String",
+      "root_field": "newsArticles",
+      "query_file": "graphql/NewsArticles.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "NewsFranchises",
+      "variables": "$tourCode: String, $allFranchises: Boolean",
+      "root_field": "newsFranchises",
+      "query_file": "graphql/NewsFranchises.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "PriorityRankings",
+      "variables": "$tourCode: TourCode!, $year: Int",
+      "root_field": "priorityRankings",
+      "query_file": "graphql/PriorityRankings.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "ScorecardCompressedV3",
+      "variables": "$tournamentId: ID!, $playerId: ID!",
+      "root_field": "scorecardCompressedV3",
+      "query_file": "graphql/ScorecardCompressedV3.graphql",
+      "compressed": true
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "ScorecardStatsComparisonCategories",
+      "variables": "$tournamentId: String!, $playerIds: [String!]!, $category: PlayerComparisonCategory!",
+      "root_field": "scorecardStatsComparison",
+      "query_file": "graphql/ScorecardStatsComparisonCategories.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "SignatureStandings",
+      "variables": "$tourCode: TourCode!",
+      "root_field": "signatureStandings",
+      "query_file": "graphql/SignatureStandings.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "StatDetails",
+      "variables": "$tourCode: TourCode!, $statId: String!, $year: Int, $eventQuery: StatDetailEventQuery",
+      "root_field": "statDetails",
+      "query_file": "graphql/StatDetails.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "StatOverview",
+      "variables": "$tourCode: TourCode!, $year: Int",
+      "root_field": "statOverview",
+      "query_file": "graphql/StatOverview.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "TeeTimesCompressedV2",
+      "variables": "$teeTimesCompressedV2Id: ID!",
+      "root_field": "teeTimesCompressedV2",
+      "query_file": "graphql/TeeTimesCompressedV2.graphql",
+      "compressed": true
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "TourCupSplit",
+      "variables": "$tourCode: TourCode!, $id: String, $year: Int, $eventQuery: StatDetailEventQuery",
+      "root_field": "tourCupSplit",
+      "query_file": "graphql/TourCupSplit.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "TourcastVideos",
+      "variables": "$tournamentId: ID!, $playerId: ID!, $round: Int!, $hole: Int, $shot: Int",
+      "root_field": "tourcastVideos",
+      "query_file": "graphql/TourcastVideos.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "TournamentOverview",
+      "variables": "$tournamentId: ID!",
+      "root_field": "tournamentOverview",
+      "query_file": "graphql/TournamentOverview.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "TournamentPastResults",
+      "variables": "$tournamentPastResultsId: ID!, $year: Int",
+      "root_field": "tournamentPastResults",
+      "query_file": "graphql/TournamentPastResults.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "Tournaments",
+      "variables": "$ids: [ID!]",
+      "root_field": "tournaments",
+      "query_file": "graphql/Tournaments.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "Videos",
+      "variables": "$tournamentId: String, $playerIds: [String!], $category: String, $franchise: String, $franchises: [String!], $tourCode: TourCode, $season: String, $limit: Int, $offset: Int, $holeNumber: String, $rating: Int",
+      "root_field": "videos",
+      "query_file": "graphql/Videos.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "Weather",
+      "variables": "$tournamentId: ID!",
+      "root_field": "weather",
+      "query_file": "graphql/Weather.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "getPlayerTournamentStatus",
+      "variables": "$playerId: ID!",
+      "root_field": "playerTournamentStatus",
+      "query_file": "graphql/getPlayerTournamentStatus.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "oddsToWinCompressed",
+      "variables": "$tournamentId: ID!",
+      "root_field": "oddsToWinCompressed",
+      "query_file": "graphql/oddsToWinCompressed.graphql",
+      "compressed": true
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "HistoricalOdds",
+      "variables": "$playerId: String!, $tournamentId: String!, $marketId: HistoricalOddsId!, $timeStamp: AWSDateTime",
+      "root_field": "historicalOdds",
+      "query_file": "graphql/HistoricalOdds.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "HistoricalTournamentsOdds",
+      "variables": "$tournamentId: String!, $marketId: OddsMarketType!, $timeStamp: AWSDateTime",
+      "root_field": "historicalTournamentsOdds",
+      "query_file": "graphql/HistoricalTournamentsOdds.graphql",
+      "compressed": false
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "shotDetailsV4Compressed",
+      "variables": "$tournamentId: ID!, $playerId: ID!, $round: Int!, $includeRadar: Boolean",
+      "root_field": "shotDetailsV4Compressed",
+      "query_file": "graphql/shotDetailsV4Compressed.graphql",
+      "compressed": true
+    },
+    {
+      "transport": "config",
+      "method": "GET",
+      "path": "https://orchestrator-config.pgatour.com/web-config",
+      "description": "Active seasons and default tournaments"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/player/list/{tour}",
+      "description": "Player directory"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/schedule/{tour}/{year}",
+      "description": "Season schedule"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/player/profiles/{playerId}",
+      "description": "Player profile"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/player/profiles/{playerId}/career",
+      "description": "Player career"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/player/profiles/{playerId}/results",
+      "description": "All player results"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/player/profiles/{playerId}/results?season={year}",
+      "description": "Player results by season"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/player/profiles/{playerId}/stats",
+      "description": "Player stat profile"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/player/profiles/{playerId}/bio",
+      "description": "Player biography"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/odds/interactivity",
+      "description": "Odds configuration"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/odds/tournament/{tournamentId}",
+      "description": "Tournament odds markets"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/odds/tournament/{tournamentId}/player/{playerId}",
+      "description": "Player odds markets"
+    },
+    {
+      "transport": "rest",
+      "method": "GET",
+      "path": "/content/watch/speedRounds/{tour}",
+      "description": "Speed-round videos"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "ScorecardStatsV3Compressed",
+      "variables": "$scorecardStatsV3CompressedId: ID!, $playerId: ID!",
+      "root_field": "scorecardStatsV3Compressed",
+      "query_file": "graphql/ScorecardStatsV3Compressed.graphql",
+      "compressed": true,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "CourseStatsDetails",
+      "variables": "$tourCode: TourCode! $queryType: CourseStatsId! $round: ToughestRound $year: Int",
+      "root_field": "courseStatsDetails",
+      "query_file": "graphql/CourseStatsDetails.graphql",
+      "compressed": false,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "AllTimeRecordCategories",
+      "variables": "$tourCode: TourCode!",
+      "root_field": "allTimeRecordCategories",
+      "query_file": "graphql/AllTimeRecordCategories.graphql",
+      "compressed": false,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "AllTimeRecordStat",
+      "variables": "$tourCode: TourCode!, $recordId: String!",
+      "root_field": "allTimeRecordStat",
+      "query_file": "graphql/AllTimeRecordStat.graphql",
+      "compressed": false,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "PlayerComparison",
+      "variables": "tourCode: TourCode!, playerIds: [String!]!, category: PlayerComparisonCategory, year: Int, tournamentId: String",
+      "root_field": "playerComparison",
+      "query_file": "graphql/PlayerComparison.graphql",
+      "compressed": false,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "UniversityRankings",
+      "variables": "year: Int, week: Int",
+      "root_field": "universityRankings",
+      "query_file": "graphql/UniversityRankings.graphql",
+      "compressed": false,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "UniversityTotalPoints",
+      "variables": "season: Int, week: Int",
+      "root_field": "universityTotalPoints",
+      "query_file": "graphql/UniversityTotalPoints.graphql",
+      "compressed": false,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "PlayoffScorecardV3",
+      "variables": "tournamentId: ID!",
+      "root_field": "playoffScorecardV3",
+      "query_file": "graphql/PlayoffScorecardV3.graphql",
+      "compressed": false,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "PlayoffShotDetailsCompressed",
+      "variables": "tournamentId: ID!",
+      "root_field": "playoffShotDetailsCompressed",
+      "query_file": "graphql/PlayoffShotDetailsCompressed.graphql",
+      "compressed": true,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "TeamStrokePlayLeaderboardCompressed",
+      "variables": "teamStrokePlayLeaderboardCompressedId: ID!",
+      "root_field": "teamStrokePlayLeaderboardCompressed",
+      "query_file": "graphql/TeamStrokePlayLeaderboardCompressed.graphql",
+      "compressed": true,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "MatchPlayLeaderboardCompressed",
+      "variables": "matchPlayLeaderboardCompressedId: ID!",
+      "root_field": "matchPlayLeaderboardCompressed",
+      "query_file": "graphql/MatchPlayLeaderboardCompressed.graphql",
+      "compressed": true,
+      "verified_at": "2026-09-24",
+      "status": "normalized wrapper live-verified on R2023470 (2023 WGC-Dell Technologies Match Play)"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "CupTeamRoster",
+      "variables": "tournamentId: ID!",
+      "root_field": "cupTeamRoster",
+      "query_file": "graphql/CupTeamRoster.graphql",
+      "compressed": false,
+      "verified_at": "2026-09-24"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "GetPowerRankingsTable",
+      "variables": "path: String!",
+      "root_field": "getPowerRankingsTable",
+      "query_file": "graphql/GetPowerRankingsTable.graphql",
+      "compressed": false,
+      "verified_at": "2026-09-25"
+    },
+    {
+      "transport": "graphql",
+      "method": "POST",
+      "operation": "GetExpertPicksTable",
+      "variables": "path: String!",
+      "root_field": "getExpertPicksTable",
+      "query_file": "graphql/GetExpertPicksTable.graphql",
+      "compressed": false,
+      "verified_at": "2026-09-25"
+    }
+  ]
+}

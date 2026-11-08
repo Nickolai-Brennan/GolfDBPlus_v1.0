@@ -1,0 +1,12 @@
+{
+  "historicalTournamentsOdds": {
+    "id": "R2026030-null",
+    "provider": "FANDUEL",
+    "tournamentId": "R2026030",
+    "message": {
+      "header": "Odds are unavailable",
+      "body": "Odds are currently unavailable. Please check back later."
+    },
+    "market": null
+  }
+}

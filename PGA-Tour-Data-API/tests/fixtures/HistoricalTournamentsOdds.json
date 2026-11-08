@@ -1,0 +1,31 @@
+{
+  "historicalTournamentsOdds": {
+    "id": "R2026027-WINNER",
+    "provider": "FANDUEL",
+    "tournamentId": "R2026027",
+    "message": null,
+    "market": {
+      "header": "Winner",
+      "subMarketPills": ["Winner"],
+      "marketType": "WINNER",
+      "subMarkets": [
+        {
+          "id": "winner",
+          "header": "To Win",
+          "options": [
+            {
+              "__typename": "OddsToWinV2",
+              "entity": {
+                "entityId": "52955",
+                "players": [
+                  {"playerId": "52955", "displayName": "Ludvig Aberg"}
+                ]
+              },
+              "odds": {"optionId": "1", "odds": "+800", "oddsSwing": "UP"}
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
