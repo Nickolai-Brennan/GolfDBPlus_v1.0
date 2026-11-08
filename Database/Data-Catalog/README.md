@@ -25,7 +25,7 @@ The [migration](../Schema/003_incoming_data.sql) defines column types, keys, nul
 
 ## Source routing
 
-The [checked-in 2026 Parquet snapshots](../../Data/Source-Files/README.md) document source grain, event coverage, and integrity checks.
+The [checked-in Parquet and TSV snapshots](../../Data/Source-Files/README.md) document source grain, event coverage, and integrity checks.
 
 | Feed or file | Stage and promote | Join and validation |
 | --- | --- | --- |
@@ -41,8 +41,8 @@ The [checked-in 2026 Parquet snapshots](../../Data/Source-Files/README.md) docum
 | [2026 course setup Parquet](../../Data/Source-Files/course_setup_2026.parquet) | Staged event/course/round/hole setup candidates for `course_scorecard` | Resolve edition and course IDs, then validate par and yardage. Preserve pin coordinates in staging until the frame is verified. |
 | [2026 shots Parquet](../../Data/Source-Files/shots_2026.parquet) | Staged shot records for offline analysis and later promotion | Preserve every source row. Resolve provider IDs and review repeated candidate keys before assigning shot identities. |
 | [2026 tee times Parquet](../../Data/Source-Files/tee_times_2026.parquet) | Staged player/round assignment candidates for `player_round` | Resolve the event, player and course. Keep UTC time and source timezone. A scheduled start alone does not establish a played round. |
-| Historical results TSV | Staged event/player candidates and final results | Edition key includes season, dates, title and location. Player name alone is insufficient. Verify status, currency and points before publishing. |
-| Data Golf 2021 round TSV | Provider IDs, rounds and statistics | Scope the event ID by tour/season. Map `dg_id`, `course_num`, and round number independently. |
+| [Historical results TSV](../../Data/Source-Files/pga_results_2001-2025.tsv) | Staged event/player candidates and final results | Edition key includes season, dates, title and location. Player name alone is insufficient. Verify status, currency and points before publishing. |
+| [Data Golf 2021 round TSV](../../Data/Source-Files/raw_pga_536_2021.tsv) | Provider IDs, rounds and statistics | Scope the event ID by tour/season. Map `dg_id`, `course_num`, and round number independently. |
 | ASA tournament-level CSV archive | Historical tournament-level evidence | Keep its grain separate from player rounds and hole observations. |
 | Model run | `player_output` | Record immutable run UUID, version, input observation, cutoff and sample size. Validate upstream availability before calculating features. |
 

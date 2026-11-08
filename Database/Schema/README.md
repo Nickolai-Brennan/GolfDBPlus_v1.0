@@ -22,7 +22,7 @@ The original bigint Shot Tracker design is a separate target. Its historical des
 
 ## Ingestion transaction
 
-For the checked-in 2026 snapshots, verify the [source inventory and checksums](../../Data/Source-Files/README.md) before staging. This workflow describes promotion requirements. The migration installer creates the schema without importing the Parquet files.
+For the checked-in source snapshots, verify the [source inventory and checksums](../../Data/Source-Files/README.md) before staging. This workflow describes promotion requirements. The migration installer creates the schema without importing the Parquet or TSV files.
 
 1. Archive original bytes privately and calculate SHA-256. Register the retrieval with the operation, stable request key and observation timestamp.
 2. Stage normalized candidates with stable record keys. Reuse the same observation timestamp on retry. A distinct retrieval keeps a distinct observation even if bytes match.
