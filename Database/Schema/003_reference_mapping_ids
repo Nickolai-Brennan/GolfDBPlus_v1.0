@@ -1,4 +1,4 @@
-a    stat_id serial PRIMARY KEY,
+   stat_id serial PRIMARY KEY,
     stat_name text NOT NULL,
     Category text NOT NULL,
     sub_category text NOT NULL,
