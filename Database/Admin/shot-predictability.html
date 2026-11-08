@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GolfDB+ Shot Predictability</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui;background:#101918;color:#e9f4ed}
+body{max-width:1100px;margin:auto;padding:2rem}header{margin-bottom:1.5rem}
+main{display:grid;grid-template-columns:3fr 2fr;gap:1rem}
+section{padding:1rem;border:1px solid #466052;border-radius:.6rem;background:#172723}
+svg{width:100%;background:#13201c;border-radius:.35rem}
+h1,h2,p{margin-top:0}label{display:block;margin-bottom:.75rem}
+dl{display:grid;grid-template-columns:1fr auto;gap:.45rem}
+dd{margin:0}meter{width:100%;height:1.2rem}
+#factors{white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:700px){main{grid-template-columns:1fr}body{padding:1rem}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Shot Predictability</h1>
+  <label>Load a GolfDB+ shot display JSON export <input type="file" id="file" accept=".json,application/json"></label>
+  <label>Shot and model version <select id="shots" disabled></select></label>
+  <p id="status" role="status">Load a model export to display a shot.</p>
+</header>
+<main>
+  <section aria-labelledby="map-title">
+    <h2 id="map-title">Hole placement</h2>
+    <svg id="map" viewBox="0 0 600 400" role="img" aria-label="Shot start, finish and perfect zone in the source coordinate frame"></svg>
+    <p id="frame">Coordinate frame unavailable</p>
+    <p>Blue dot: start. White dot: finish. Green region: modeled perfect zone.</p>
+  </section>
+  <section aria-labelledby="prob-title">
+    <h2 id="prob-title">Outcome probabilities</h2>
+    <div id="probabilities"></div>
+    <h2>Strokes gained indicators</h2>
+    <dl id="sg"></dl>
+    <h2>Model factors</h2>
+    <pre id="factors">No model loaded.</pre>
+  </section>
+</main>
+<script>
+const byId = id => document.getElementById(id);
+const shots = byId('shots');
+let rows = [];
+
+function numeric(value) {
+  if (typeof value !== 'number' && (typeof value !== 'string' || !value.trim())) return null;
+  const number = Number(value);
+  return Number.isFinite(number) ? number : null;
+}
+
+function point(value) {
+  const coords = Array.isArray(value) ? value : typeof value === 'string'
+    ? value.replace(/[()]/g, '').split(',') : [];
+  const pair = coords.map(numeric);
+  return pair.length === 2 && pair.every(n => n !== null) ? pair : null;
+}
+
+function svgNode(tag, attributes) {
+  const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
+  byId('map').append(node);
+}
+
+function showMap(row) {
+  byId('map').replaceChildren();
+  byId('frame').textContent = row.coordinate_frame || 'Coordinate frame unavailable';
+  if (!row.coordinate_frame) return;
+  const start = point(row.start_coordinates);
+  const end = point(row.end_coordinates);
+  const zone = row.perfect_shot_zone;
+  // Only plot a polygon whose coordinates are explicitly in the shot frame.
+  const ring = zone?.type === 'Polygon' && zone.coordinate_frame === row.coordinate_frame
+    && Array.isArray(zone.coordinates?.[0]) ? zone.coordinates[0].map(point) : [];
+  const polygon = ring.length >= 4 && ring.every(Boolean) ? ring : [];
+  const points = [start, end, ...polygon].filter(Boolean);
+  if (!points.length) return;
+  const minX = Math.min(...points.map(p => p[0]));
+  const maxX = Math.max(...points.map(p => p[0]));
+  const minY = Math.min(...points.map(p => p[1]));
+  const maxY = Math.max(...points.map(p => p[1]));
+  const scale = Math.min(540 / Math.max(maxX - minX, 1), 340 / Math.max(maxY - minY, 1));
+  const project = ([x,y]) => [300 + (x - (minX + maxX) / 2) * scale,
+                              200 - (y - (minY + maxY) / 2) * scale];
+  if (polygon.length) svgNode('polygon', {points:polygon.map(p => project(p).join(',')).join(' '),
+                                         fill:'#3f9b68', opacity:'.65'});
+  if (start && end) {
+    const [x1,y1] = project(start), [x2,y2] = project(end);
+    svgNode('line', {x1,y1,x2,y2,stroke:'#a4bcad','stroke-dasharray':'5 5'});
+  }
+  for (const [p,fill] of [[start,'#7ec8ff'],[end,'#ffffff']]) {
+    if (p) { const [cx,cy] = project(p); svgNode('circle', {cx,cy,r:7,fill}); }
+  }
+}
+
+function render(row) {
+  showMap(row);
+  const probabilities = byId('probabilities');
+  probabilities.replaceChildren();
+  for (const key of ['perfect','probable','worst']) {
+    const value = numeric(row[key + '_probability']);
+    const label = document.createElement('label');
+    label.textContent = key + ' · ' + (value === null ? 'Unavailable' : (100 * value).toFixed(1) + '%');
+    if (value !== null && value >= 0 && value <= 1) {
+      const meter = document.createElement('meter');
+      meter.max = 1;
+      meter.value = value;
+      label.append(meter);
+    }
+    probabilities.append(label);
+  }
+  const sg = byId('sg');
+  sg.replaceChildren();
+  for (const [label,key,unit] of [
+    ['Hole potential','hole_potential_sg_percent','%'], ['Pre-shot','pre_shot_sg_percent','%'],
+    ['Post-shot','post_shot_sg_percent','%'], ['Change','sg_change_percentage_points',' pp']]) {
+    const term = document.createElement('dt'), value = document.createElement('dd');
+    term.textContent = label;
+    value.textContent = row[key] == null ? 'Unavailable' : row[key] + unit;
+    sg.append(term,value);
+  }
+  byId('factors').textContent = JSON.stringify({
+    club: row.club, shot_class: row.shot_class, setting: row.shot_start_setting,
+    distance_to_pin_yards: row.shot_start_distance_to_pin_yards,
+    forecast_impact: row.shot_start_forecast_conditions_score,
+    difficulty: row.shot_projection_difficulty_warning_score,
+    percentile_range: [row.outcome_percentile_low, row.outcome_percentile_high],
+    reliability: row.shot_type_performance_reliability,
+    skill_adjustment: row.player_skill_level_adjustment,
+    hole_adjustment: row.course_hole_conditions_difficulty_adjustment,
+    performance_range: row.shot_projection_output_performance_range,
+    predicted_outcome: row.predicted_shot_outcome,
+    factors: row.factors
+  },null,2);
+}
+
+byId('file').addEventListener('change', async event => {
+  const file = event.target.files[0];
+  if (!file) return;
+  try {
+    const data = JSON.parse(await file.text());
+    const items = Array.isArray(data) ? data : [data];
+    if (!items.length || items.some(row => !row?.shot_id || !row.model_version)) {
+      throw new Error('Expected shot display rows with shot_id and model_version.');
+    }
+    rows = items;
+    shots.replaceChildren(...rows.map((row,index) =>
+      new Option('Hole ' + row.hole_number + ' · ' + row.model_version + ' · ' + row.shot_id, index)));
+    shots.disabled = false;
+    byId('status').textContent = rows.length + ' model output row(s) loaded.';
+    render(rows[0]);
+  } catch (error) {
+    byId('status').textContent = error.message;
+  }
+});
+shots.addEventListener('change', () => render(rows[Number(shots.value)]));
+</script>
+</body>
+</html>

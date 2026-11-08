@@ -15,6 +15,7 @@ psql "$DATABASE_URL" -v ON_ERROR_STOP=1 \
 | 2 | [Core reference](002_core_foundations.sql) | Shared lookup vocabulary, units, sources and optional reference links. |
 | 3 | [Incoming data](003_incoming_data.sql) | Staging, provider IDs, facts, outputs and reporting views. |
 | 4 | [Query views](004_query_views.sql) | Player par scoring and event and intake coverage. |
+| 5 | [Performance and statistics](005_performance_statistics.sql) | Scoring views, player round and shot tracking, and versioned predictability outputs. |
 
 Run the same installer for a database already on the UUID foundation. It adds tables and seeds mappings from the legacy columns. Future writes use the mapping tables. Review any provider IDs assigned independently in older pipelines before import. Installer roles need schema creation, table alteration and extension permissions where applicable.
 
@@ -32,3 +33,37 @@ For the checked-in source snapshots, verify the [source inventory and checksums]
 6. Promote complete event publications together. Use their exact observation IDs for reads. Keep a partially resolved batch staged until the gaps are reconciled.
 
 See the [catalog and ERD](../Data-Catalog/README.md) for the full inventory and source-to-table mapping.
+
+## 2026 performance and scoring
+
+The [performance and statistics migration](005_performance_statistics.sql) adds the following read models and input tables. PostgreSQL schema names are lowercase.
+
+| Object | Grain and source |
+| --- | --- |
+| `statistic.player_registry` | Canonical player UUID, text PGA TOUR ID and the `analytics.player_info` profile. The 2026 roster uses the union of player IDs in the checked-in tee times, shots and player directory. |
+| `statistic.results_scoring_event_basic` | Player, event and official publication, with available rounds 1–4. Course is the event's primary venue. |
+| `statistic.results_events_positioning` | Player, event and official publication, including rank display, earnings currency and FedExCup points. |
+| `statistic.results_scoring_round` | Player and event round, with actual round venue and available tee time. The date range is the event date range. |
+| `statistic.course_scorecard` | Event, course, round setup and hole. Nine- and 18-hole totals require the relevant complete setup. |
+| `performance.player_tracker_round` | One row per scored player round, with separate columns for holes 1–18 and front/back totals. |
+| `performance.player_tracker_round_totals` | Scored player round, with known-hole counts and FIR/GIR denominators. The one-putt and three-putt counts use exact values. |
+| `performance.player_tracker_shot_tourcast` | One reviewed source shot identity in its event and player round. Use feet for putt length, yards for other shot lengths and pin distances, mph for swing speed and feet for apex. |
+| `performance.shot_performance_predictability_output` | One shot, model version and evidence cutoff. Stores modeled zone, percentile interval, weather and difficulty scores, factors, projected outcomes and probability buckets. |
+
+Filter season-specific results with `season_id = '2026-PGA'`. Round and event scores are read from the canonical scoring tables. Use the publication ID to choose an official result revision. Preserve nulls for unknown observations. Store reviewed FIR, GIR, proximity and putts in `performance.player_hole_metrics`. In round totals, the FIR/GIR available counts represent known indicators, and the putt total is a sum of measured holes. Review coverage counts before comparing rounds.
+
+The [2026 sources](../../Data/Source-Files/README.md) do not establish every requested fact. Preserve repeated source shot keys in staging pending disambiguation. The snapshot does not establish club selection, swing plane, shot shape, hole handicap, weather impact or player wellness for every shot. Use independently verified sources for those fields. Official finish, earnings and points come from the official result publication.
+
+### Shot model display
+
+Open [shot-predictability.html](../Admin/shot-predictability.html) in a browser. Save the JSON value from the query below as a file and load it with the page's file picker. Add event, round or player predicates to narrow the export.
+
+```sql
+SELECT COALESCE(jsonb_agg(to_jsonb(s) ORDER BY hole_number, shot_id, as_of), '[]'::jsonb)
+FROM performance.shot_predictability_display s
+WHERE s.event_id = '<event UUID>'::uuid;
+```
+
+The display plots shot positions in the named coordinate frame. A modeled zone uses a Polygon geometry with a `coordinate_frame` field matching the shot. The graphic is a coordinate plot with no course basemap. The dashed line joins the two recorded endpoints. The sidebar shows the normalized strokes-gained indicators and their difference in percentage points.
+
+The three probability buckets are mutually exclusive and sum to one when populated. Forecast impact and difficulty use separate 0–10 scores. Difficulty 0 is reserved for a guaranteed top-quality outcome and 10 rules out the perfect outcome. Percentiles describe the modeled quality range on a 0–100 scale. A calibrated model must supply probabilities, percentile bands, reliability, shot quality and strokes-gained estimates before the panel can show them. The schema and display do not generate predictions.
