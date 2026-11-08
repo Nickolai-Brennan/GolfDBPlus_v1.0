@@ -1,5 +1,9 @@
 # Changelog
 
+## GolfDB+ integration — Unreleased
+
+- Load runtime GraphQL documents from the installed queries package and verify every manifest operation resolves.
+
 ## [Unreleased]
 
 - Add raw and normalized historical tournament/player odds wrappers.

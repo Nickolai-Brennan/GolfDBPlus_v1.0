@@ -1,5 +1,11 @@
 # Changelog
 
+## GolfDB+ — Unreleased
+
+- Add the canonical PostgreSQL install, provider ID crosswalks, observation staging, and player, event and course data contracts.
+- Add weighted event and season difficulty, full-event and round hole metrics, prepared intake and reporting queries, and the data catalog ERD.
+- Fix the embedded GraphQL runtime query directory and add SQL and API fixture CI.
+
 ## 0.3.7 — 2026-09-25
 
 - Add scheduled live smoke coverage for playoff, team-stroke, match-play and

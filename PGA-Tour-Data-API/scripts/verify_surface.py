@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 import pga_tour_api as pga
+from pga_tour_api import _api
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,4 +37,6 @@ package_names = {path.name for path in package_queries}
 manifest_names = {Path(item["query_file"]).name for item in manifest_graphql}
 if root_names != package_names or root_names != manifest_names:
     raise SystemExit("query filenames differ between root, package and manifest")
+for operation in manifest_graphql:
+    _api._read_query(operation["operation"])
 print("surface verification: OK")

@@ -61,7 +61,7 @@ INSERT INTO golf.tour VALUES ('pga', 'PGA TOUR');
 -- Tour season labels can differ from the calendar year of play.
 CREATE TABLE golf.tour_season (
     tour_id text REFERENCES golf.tour,
-    season smallint, (year)
+    season smallint, -- year
     season_label text,
     starts_on date,
     ends_on date,
@@ -151,9 +151,8 @@ CREATE TABLE golf.event_course (
     PRIMARY KEY (event_id, course_id)
 );
 CREATE TABLE golf.event_round (
-    event_id bigint REFERENCES golf.event_edition,a
+    event_id bigint REFERENCES golf.event_edition,
     course_id bigint REFERENCES golf.course,
-    round_id smallint CHECK (course_id+round number > 0),
     round_number smallint CHECK (round_number > 0),
     played_on date,
     round_status text,
@@ -165,11 +164,10 @@ CREATE TABLE golf.round_hole_setup (
     round_number smallint,
     course_id bigint,
     hole_number smallint,
-    hole_id bigint REFERENCES golf.course_hole (course_id, plus hole_number),
     par smallint CHECK (par > 0),
     yards integer CHECK (yards > 0),
     PRIMARY KEY (event_id, round_number, course_id, hole_number),
-    FOREIGN KEY (event_id, round_number) REFERENCES golf.event_round,
+    FOREIGN KEY (event_id, round_number, course_id) REFERENCES golf.event_round,
     FOREIGN KEY (event_id, course_id) REFERENCES golf.event_course,
     FOREIGN KEY (course_id, hole_number) REFERENCES golf.course_hole
 );
@@ -202,7 +200,7 @@ CREATE TABLE golf.player_round (
     PRIMARY KEY (event_id, player_id, round_number),
     UNIQUE (event_id, player_id, round_number, course_id),
     FOREIGN KEY (event_id, player_id) REFERENCES golf.event_result,
-    FOREIGN KEY (event_id, round_number) REFERENCES golf.event_round,
+    FOREIGN KEY (event_id, round_number, course_id) REFERENCES golf.event_round,
     FOREIGN KEY (event_id, course_id) REFERENCES golf.event_course
 );
 CREATE TABLE golf.player_hole (
@@ -228,7 +226,6 @@ CREATE TABLE golf.shot (
     shot_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     event_id bigint NOT NULL,
     course_id bigint NOT NULL,
-    hole_id bigint NOT NULL, 
     player_id bigint NOT NULL,
     round_number smallint NOT NULL,
     hole_number smallint NOT NULL,
@@ -242,7 +239,7 @@ CREATE TABLE golf.shot (
     batch_id bigint NOT NULL REFERENCES ingest.batch,
     UNIQUE (event_id, player_id, round_number, hole_number, shot_number),
     FOREIGN KEY (event_id, player_id, round_number, hole_number) REFERENCES golf.player_hole,
-    FOREIGN KEY (course_id, hole_id) REFERENCES golf.course_hole (course_id, hole_id)
+    FOREIGN KEY (event_id, round_number, course_id, hole_number) REFERENCES golf.round_hole_setup
 
 );
 
@@ -337,7 +334,7 @@ CREATE TABLE golf.metric_observation (
     FOREIGN KEY (tour_id, season) REFERENCES golf.tour_season,
     FOREIGN KEY (tour_id, season, event_id) REFERENCES golf.schedule_entry,
     FOREIGN KEY (event_id, player_id) REFERENCES golf.event_result,
-    FOREIGN KEY (event_id, round_number) REFERENCES golf.event_round,
+    FOREIGN KEY (event_id, round_number, course_id) REFERENCES golf.event_round,
     FOREIGN KEY (event_id, player_id, round_number) REFERENCES golf.player_round,
     FOREIGN KEY (event_id, course_id) REFERENCES golf.event_course,
     FOREIGN KEY (course_id, hole_number) REFERENCES golf.course_hole,

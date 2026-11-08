@@ -32,7 +32,7 @@ _MAX_RETRIES = 3
 _TIMEOUT_SECONDS = 30.0
 _BACKOFF_BASE = 0.5
 
-_QUERY_DIR = Path(__file__).parent / "graphql"
+_QUERY_DIR = Path(__file__).parent / "queries"
 _QUERY_CACHE: dict[str, str] = {}
 
 _MIN_INTERVAL = 0.1  # 10 req/s ceiling
@@ -70,7 +70,7 @@ def _headers() -> dict[str, str]:
 
 
 def _read_query(operation_name: str) -> str:
-    """Read a GraphQL query from the graphql/ directory, with caching."""
+    """Read a GraphQL query from the packaged queries/ directory, with caching."""
     if operation_name in _QUERY_CACHE:
         return _QUERY_CACHE[operation_name]
     path = _QUERY_DIR / f"{operation_name}.graphql"

@@ -1,0 +1,47 @@
+name: GolfDB database contracts
+on:
+  push:
+    paths: ['Database/**', 'PGA-Tour-Data-API/**', '.github/workflows/database.yml']
+  pull_request:
+    paths: ['Database/**', 'PGA-Tour-Data-API/**', '.github/workflows/database.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_DB: golfdb_test
+          POSTGRES_USER: golfdb
+          POSTGRES_PASSWORD: local_ci_only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U golfdb -d golfdb_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://golfdb:local_ci_only@localhost:5432/golfdb_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install migrations twice and run intake tests
+        run: |
+          psql "$DATABASE_URL" -f Database/Schema/install.psql
+          psql "$DATABASE_URL" -f Database/Schema/install.psql
+          psql "$DATABASE_URL" -v ON_ERROR_STOP=1 \
+            -f Database/Queries/intake.sql -f Database/Queries/promote.sql \
+            -f Database/Queries/read.sql -f Database/Tests/incoming_data.sql
+      - name: Verify installed API package and fixtures
+        working-directory: PGA-Tour-Data-API
+        run: |
+          python -m pip install . pytest
+          python scripts/verify_surface.py
+          python -m pytest -ra

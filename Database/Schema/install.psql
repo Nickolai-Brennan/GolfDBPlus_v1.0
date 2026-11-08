@@ -1,0 +1,4 @@
+\set ON_ERROR_STOP on
+\ir 001_golfdb_foundation.sql
+\ir 002_core_foundations.sql
+\ir 003_incoming_data.sql

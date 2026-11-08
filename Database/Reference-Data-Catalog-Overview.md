@@ -36,3 +36,5 @@ Each raw file must register source_system, original_url, discovered_at, retrieve
 
 ## Collection policy
 Respect official terms, robots directives where applicable, account access, document copyright, API rate limits and source response codes. No bypass of login, paywall or download restrictions. Do not commit proprietary attachments or credentials to public GitHub. For production, put files in private object storage and keep only manifest files and approved samples in git.
+
+See the [canonical incoming data catalog](Data-Catalog/README.md) for the current schema and source promotion rules.
