@@ -1,0 +1,15 @@
+query PlayoffScorecardV3($tournamentId: ID!) {
+  playoffScorecardV3(tournamentId: $tournamentId) {
+    tournamentId
+    playoffs {
+      id holeDetail courseId courseName playoffScoredType title
+      players { active finalRoundTotal position roundDisplay total player { id displayName firstName lastName country } }
+      playoff {
+        currentHole
+        holes { playoffHole courseHole par format isTotal }
+        players { active position scores { holeNumber score status isTotal } player { id displayName firstName lastName country } }
+        thru
+      }
+    }
+  }
+}

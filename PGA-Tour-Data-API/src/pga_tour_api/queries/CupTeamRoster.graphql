@@ -1,0 +1,7 @@
+query CupTeamRoster($tournamentId: ID!) {
+ cupTeamRoster(tournamentId: $tournamentId) {
+  tournamentId teams { teamName teamColor teamLogo teamId teamFlag
+   sections { sectionTitle showResults players { playerId displayName shortName hideHeadshot results { wins ties losses total } color } }
+  }
+ }
+}

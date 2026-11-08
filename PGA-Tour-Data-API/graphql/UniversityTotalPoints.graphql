@@ -1,0 +1,7 @@
+query UniversityTotalPoints($season: Int, $week: Int) {
+  universityTotalPoints(season: $season, week: $week) {
+    season week title description headers sponsorLogo sponsorText
+    weekNavigation { value displayText } seasonNavigation { value displayText }
+    players { playerId playerName rank rankSort data tournaments { finishPosition name playedYear points week } }
+  }
+}

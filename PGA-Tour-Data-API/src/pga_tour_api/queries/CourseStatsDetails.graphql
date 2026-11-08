@@ -1,0 +1,35 @@
+query CourseStatsDetails(
+    $tourCode: TourCode!
+    $queryType: CourseStatsId!
+    $round: ToughestRound
+    $year: Int
+  ) {
+    courseStatsDetails(tourCode: $tourCode, queryType: $queryType, round: $round, year: $year) {
+      tourCode
+      year
+      round
+      displayYear
+      seasons {
+        year
+        displaySeason
+      }
+      headers
+      displayName
+      tableName
+      rows {
+        rank
+        displayName
+        values {
+          value
+          tendency
+        }
+        tournamentId
+        tournamentName
+      }
+      shareURL
+      roundPills {
+        display
+        queryVal
+      }
+    }
+  }

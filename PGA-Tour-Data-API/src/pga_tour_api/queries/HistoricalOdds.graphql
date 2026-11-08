@@ -1,0 +1,13 @@
+query HistoricalOdds($playerId: String!, $tournamentId: String!, $marketId: HistoricalOddsId!, $timeStamp: AWSDateTime) {
+  historicalOdds(playerId: $playerId, tournamentId: $tournamentId, marketId: $marketId, timeStamp: $timeStamp) {
+    tournamentId
+    season
+    playerId
+    marketName
+    optionId
+    odds
+    oddsSwing
+    timeStamp
+    message { header body }
+  }
+}

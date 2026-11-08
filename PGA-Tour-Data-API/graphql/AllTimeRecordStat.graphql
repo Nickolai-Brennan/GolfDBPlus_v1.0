@@ -1,0 +1,18 @@
+query AllTimeRecordStat($tourCode: TourCode!, $recordId: String!) {
+    allTimeRecordStat(tourCode: $tourCode, recordId: $recordId) {
+      __typename
+      recordId
+      title
+      isPlayerBased
+      statHeaders
+      categoryId
+      categoryName
+      subCategoryName
+      rows {
+        __typename
+        playerId
+        values
+      }
+      primaryColumnIndex
+    }
+  }
