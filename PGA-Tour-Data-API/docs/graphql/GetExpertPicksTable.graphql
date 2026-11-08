@@ -1,0 +1,11 @@
+query GetExpertPicksTable($path: String!) {
+ getExpertPicksTable(path: $path) {
+  tournamentName
+  expertPicksTableRows {
+   expertName expertTitle
+   lineup { id firstName lastName countryName countryFlag headshot }
+   winner { id firstName lastName countryName countryFlag headshot }
+   percentSelected percentSelectedColor
+  }
+ }
+}

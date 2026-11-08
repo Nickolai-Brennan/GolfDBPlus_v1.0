@@ -1,0 +1,468 @@
+stat_id,stat_name,category,subcategory
+02675,SG: Total,Strokes Gained,Strokes Gained Leaders
+02674,SG: Tee-to-Green,Strokes Gained,Strokes Gained Leaders
+02567,SG: Off-the-Tee,Strokes Gained,Strokes Gained Leaders
+02568,SG: Approach the Green,Strokes Gained,Strokes Gained Leaders
+02569,SG: Around-the-Green,Strokes Gained,Strokes Gained Leaders
+02564,SG: Putting,Strokes Gained,Strokes Gained Leaders
+129,Total Driving,Off The Tee,Driving Leaders
+101,Driving Distance,Off The Tee,Driving Leaders
+102,Driving Accuracy Percentage,Off The Tee,Driving Leaders
+02402,Ball Speed,Off The Tee,Driving Leaders
+159,Longest Drives,Off The Tee,Distance (All Drives)
+496,Driving Pct. 320+ (Measured),Off The Tee,Distance (All Drives)
+495,Driving Pct. 300-320 (Measured),Off The Tee,Distance (All Drives)
+454,Driving Pct. 300+ (Measured),Off The Tee,Distance (All Drives)
+455,Driving Pct. 280-300 (Measured),Off The Tee,Distance (All Drives)
+456,Driving Pct. 260-280 (Measured),Off The Tee,Distance (All Drives)
+457,Driving Pct. 240-260 (Measured),Off The Tee,Distance (All Drives)
+458,Driving Pct. <= 240 (Measured),Off The Tee,Distance (All Drives)
+317,Driving Distance - All Drives,Off The Tee,Distance (All Drives)
+02433,Driving Pct. 320+ (All Drives),Off The Tee,Distance (All Drives)
+02432,Driving Pct. 300-320 (All Drives),Off The Tee,Distance (All Drives)
+214,Driving Pct. 300+ (All Drives),Off The Tee,Distance (All Drives)
+215,Driving Pct. 280-300 (All Drives),Off The Tee,Distance (All Drives)
+216,Driving Pct. 260-280 (All Drives),Off The Tee,Distance (All Drives)
+217,Driving Pct. 240-260 (All Drives),Off The Tee,Distance (All Drives)
+218,Driving Pct. <= 240 (All Drives),Off The Tee,Distance (All Drives)
+02341,Percentage of Yardage covered by Tee Shots,Off The Tee,Distance (All Drives)
+02342,Percentage of Yardage covered by Tee Shots - Par 4's,Off The Tee,Distance (All Drives)
+02343,Percentage of Yardage covered by Tee Shots - Par 5's,Off The Tee,Distance (All Drives)
+02435,Rough Tendency,Off The Tee,Accuracy
+459,Left Rough Tendency,Off The Tee,Accuracy
+460,Right Rough Tendency,Off The Tee,Accuracy
+080,Right Rough Tendency (RTP Score),Off The Tee,Accuracy
+081,Left Rough Tendency (RTP Score),Off The Tee,Accuracy
+01008,Fairway Bunker Tendency,Off The Tee,Accuracy
+461,Missed Fairway Percent - Other,Off The Tee,Accuracy
+213,Hit Fairway Percentage,Off The Tee,Accuracy
+02420,Distance from Edge of Fairway,Off The Tee,Accuracy
+02421,Distance from Center of Fairway,Off The Tee,Accuracy
+02422,Left Tendency,Off The Tee,Accuracy
+02423,Right Tendency,Off The Tee,Accuracy
+02438,Good Drive Percentage,Off The Tee,Accuracy
+02401,Club Head Speed,Off The Tee,Radar
+02403,Smash Factor,Off The Tee,Radar
+02404,Launch Angle,Off The Tee,Radar
+02405,Spin Rate,Off The Tee,Radar
+02406,Distance to Apex,Off The Tee,Radar
+02407,Apex Height,Off The Tee,Radar
+02408,Hang Time,Off The Tee,Radar
+02409,Carry Distance,Off The Tee,Radar
+02410,Carry Efficiency,Off The Tee,Radar
+02411,Total Distance Efficiency,Off The Tee,Radar
+02412,Total Driving Efficiency,Off The Tee,Radar
+158,Ball Striking,Approach the Green,Approach Leaders
+103,Greens in Regulation Percentage,Approach the Green,Approach Leaders
+331,Proximity to Hole,Approach the Green,Approach Leaders
+02331,Approaches from > 100 yards,Approach the Green,Approach Leaders
+02329,Approaches from inside 100 yards,Approach the Green,Approach Leaders
+02437,Greens or Fringe in Regulation,Approach the Green,Greens in Regulation
+326,GIR Percentage - 200+ yards,Approach the Green,Greens in Regulation
+327,GIR Percentage - 175-200 yards,Approach the Green,Greens in Regulation
+328,GIR Percentage - 150-175 yards,Approach the Green,Greens in Regulation
+329,GIR Percentage - 125-150 yards,Approach the Green,Greens in Regulation
+330,GIR Percentage - < 125 yards,Approach the Green,Greens in Regulation
+077,GIR Percentage - 100-125 yards,Approach the Green,Greens in Regulation
+02332,GIR Percentage - 100+ yards,Approach the Green,Greens in Regulation
+02330,GIR Percentage - < 100 yards,Approach the Green,Greens in Regulation
+078,GIR Percentage - 75-100 yards,Approach the Green,Greens in Regulation
+079,GIR Percentage - < 75 yards,Approach the Green,Greens in Regulation
+190,GIR Percentage from Fairway,Approach the Green,Greens in Regulation
+02434,GIR Pct. - Fairway Bunker,Approach the Green,Greens in Regulation
+199,GIR Percentage from Other than Fairway,Approach the Green,Greens in Regulation
+02361,Approaches from > 275 yards,Approach the Green,Accuracy from Fairway
+02360,Approaches from 250-275 yards,Approach the Green,Accuracy from Fairway
+02359,Approaches from 225-250 yards,Approach the Green,Accuracy from Fairway
+02358,Approaches from 200-225 yards,Approach the Green,Accuracy from Fairway
+336,Approaches from > 200 yards,Approach the Green,Accuracy from Fairway
+337,Approaches from 175-200 yards,Approach the Green,Accuracy from Fairway
+338,Approaches from 150-175 yards,Approach the Green,Accuracy from Fairway
+339,Approaches from 125-150 yards,Approach the Green,Accuracy from Fairway
+340,Approaches from 50-125 yards,Approach the Green,Accuracy from Fairway
+074,Approaches from 100-125 yards,Approach the Green,Accuracy from Fairway
+075,Approaches from 75-100 yards,Approach the Green,Accuracy from Fairway
+076,Approaches from 50-75 yards,Approach the Green,Accuracy from Fairway
+431,Fairway Proximity,Approach the Green,Accuracy from Fairway
+437,Rough Proximity,Approach the Green,Accuracy from Rough
+432,Left Rough Proximity,Approach the Green,Accuracy from Rough
+433,Right Rough Proximity,Approach the Green,Accuracy from Rough
+02375,Approaches from > 275 yards (Rgh),Approach the Green,Accuracy from Rough
+02374,Approaches from 250-275 yards (Rgh),Approach the Green,Accuracy from Rough
+02373,Approaches from 225-250 yards (Rgh),Approach the Green,Accuracy from Rough
+02372,Approaches from 200-225 yards (Rgh),Approach the Green,Accuracy from Rough
+02371,Approaches from > 100 yards (Rgh),Approach the Green,Accuracy from Rough
+02370,Approaches from inside 100 yards (Rgh),Approach the Green,Accuracy from Rough
+02369,Approaches from > 200 yards (Rgh),Approach the Green,Accuracy from Rough
+02368,Approaches from 175-200 yards (Rgh),Approach the Green,Accuracy from Rough
+02367,Approaches from 150-175 yards (Rgh),Approach the Green,Accuracy from Rough
+02366,Approaches from 125-150 yards (Rgh),Approach the Green,Accuracy from Rough
+02365,Approaches from 50-125 yards (Rgh),Approach the Green,Accuracy from Rough
+02364,Approaches from 100-125 yards (Rgh),Approach the Green,Accuracy from Rough
+02363,Approaches from 75-100 yards (Rgh),Approach the Green,Accuracy from Rough
+02362,Approaches from 50-75 yards (Rgh),Approach the Green,Accuracy from Rough
+02333,Birdie or Better Percentage - Fairway,Approach the Green,Scoring
+02334,Birdie or Better Percentage - Left Rough,Approach the Green,Scoring
+02335,Birdie or Better Percentage - Right Rough,Approach the Green,Scoring
+02336,Birdie or Better Percentage - Rough,Approach the Green,Scoring
+357,Birdie or Better Percentage - 200+ yards,Approach the Green,Scoring
+358,Birdie or Better Percentage - 175-200 yards,Approach the Green,Scoring
+359,Birdie or Better Percentage - 150-175 yards,Approach the Green,Scoring
+360,Birdie or Better Percentage - 125-150 yards,Approach the Green,Scoring
+361,Birdie or Better Percentage - < 125 yards,Approach the Green,Scoring
+02379,Approach > 275 yards (RTP),Approach the Green,Scoring
+02378,Approach 250-275 yards (RTP),Approach the Green,Scoring
+02377,Approach 225-250 yards (RTP),Approach the Green,Scoring
+02376,Approach 200-225 yards (RTP),Approach the Green,Scoring
+480,Approach > 200 yards (RTP Score),Approach the Green,Scoring
+479,Approach 175-200 yards (RTP Score),Approach the Green,Scoring
+478,Approach 150-175 yards (RTP Score),Approach the Green,Scoring
+473,Approach 125-150 yards (RTP Score),Approach the Green,Scoring
+472,Approach < 125 yards (RTP Score),Approach the Green,Scoring
+028,Approach 100-125 yards (RTP Score),Approach the Green,Scoring
+029,Approach 75-100 yards (RTP Score),Approach the Green,Scoring
+030,Approach 50-75 yards (RTP Score),Approach the Green,Scoring
+02380,Approaches 50-75 yards-Rgh (RTP),Approach the Green,Scoring
+02381,Approaches 75-100 yards-Rgh (RTP),Approach the Green,Scoring
+02382,Approaches 100-125 yards-Rgh (RTP),Approach the Green,Scoring
+02383,Approaches 50-125 yards-Rgh (RTP),Approach the Green,Scoring
+02384,Approaches 125-150 yards-Rgh (RTP),Approach the Green,Scoring
+02385,Approaches 150-175 yards-Rgh (RTP),Approach the Green,Scoring
+02386,Approaches 175-200 yards-Rgh (RTP),Approach the Green,Scoring
+02387,Approaches > 200 yards-Rgh (RTP),Approach the Green,Scoring
+02388,Approaches < 100 yards-Rgh (RTP),Approach the Green,Scoring
+02389,Approaches > 100 yards-Rgh (RTP),Approach the Green,Scoring
+02390,Approaches 200-225 yards-Rgh (RTP),Approach the Green,Scoring
+02391,Approaches 225-250 yards-Rgh (RTP),Approach the Green,Scoring
+02392,Approaches 250-275 yards-Rgh (RTP),Approach the Green,Scoring
+02393,Approaches > 275 yards-Rgh (RTP),Approach the Green,Scoring
+469,Approaches Left Rough (RTP Score),Approach the Green,Scoring
+470,Approaches Right Rough (RTP Score),Approach the Green,Scoring
+471,Fairway Approach (RTP Score),Approach the Green,Scoring
+419,Going for the Green,Approach the Green,Going for it
+486,Going for the Green - Hit Green Pct.,Approach the Green,Going for it
+02357,Going for the Green - Birdie or Better,Approach the Green,Going for it
+436,Par 5 Going for the Green,Approach the Green,Going for it
+02426,Average Going for it Shot Distance (in Yards),Approach the Green,Going for it
+02431,Average Distance after Going for it Shot,Approach the Green,Going for it
+350,Total Hole Outs,Approach the Green,"Holeouts, Other"
+351,Longest Hole Outs (in yards),Approach the Green,"Holeouts, Other"
+02325,Average Approach Shot Distance,Approach the Green,"Holeouts, Other"
+02338,Average Approach Distance - Birdie or Better,Approach the Green,"Holeouts, Other"
+02339,Average Approach Distance - Par,Approach the Green,"Holeouts, Other"
+02340,Average Approach Distance - Bogey or Worse,Approach the Green,"Holeouts, Other"
+02430,Average Distance to Hole After Tee Shot,Approach the Green,"Holeouts, Other"
+130,Scrambling,Around the Green,Short Game Leaders
+111,Sand Save Percentage,Around the Green,Short Game Leaders
+363,Scrambling from Rough,Around the Green,Short Game Leaders
+366,Scrambling from > 30 yards,Around the Green,Short Game Leaders
+362,Scrambling from the Sand,Around the Green,Up and Down
+364,Scrambling from the Fringe,Around the Green,Up and Down
+365,Scrambling from Other Locations,Around the Green,Up and Down
+367,Scrambling from 20-30 yards,Around the Green,Up and Down
+368,Scrambling from 10-20 yards,Around the Green,Up and Down
+369,Scrambling from < 10 yards,Around the Green,Up and Down
+370,Sand Saves from 30+ yards,Around the Green,Up and Down
+371,Sand Saves from 20-30 yards,Around the Green,Up and Down
+372,Sand Saves from 10-20 yards,Around the Green,Up and Down
+373,Sand Saves from < 10 yards,Around the Green,Up and Down
+481,Scrambling Average Distance to Hole,Around the Green,Accuracy
+466,Scrambling > 30 yds (RTP Score),Around the Green,Scoring
+467,Scrambling 20-30 yds (RTP Score),Around the Green,Scoring
+468,Scrambling 10-20 yds (RTP Score),Around the Green,Scoring
+465,Scrambling Fringe (RTP Score),Around the Green,Scoring
+464,Scrambling Rough (RTP Score),Around the Green,Scoring
+104,Putting Average,Putting,Putting Leaders
+119,Putts Per Round,Putting,Putting Leaders
+413,One-Putt Percentage,Putting,Putting Leaders
+426,3-Putt Avoidance,Putting,Putting Leaders
+484,Putting Inside 10’,Putting,Putting Leaders
+02428,Total Putting,Putting,Putting Averages
+02439,Bonus Putting,Putting,Putting Averages
+402,Overall Putting Average,Putting,Putting Averages
+115,Birdie or Better Conversion Percentage,Putting,Putting Averages
+393,Putts per Round - Round 1,Putting,Putts per Round
+394,Putts per Round - Round 2,Putting,Putts per Round
+395,Putts per Round - Round 3,Putting,Putts per Round
+396,Putts per Round - Round 4,Putting,Putts per Round
+397,Putts per Round - Round 5,Putting,Putts per Round
+398,1-Putts per Round,Putting,Putts per Round
+399,2-Putts per Round,Putting,Putts per Round
+400,3-Putts per Round,Putting,Putts per Round
+401,3+ Putts per Round,Putting,Putts per Round
+414,One-Putt Percentage - Round 1,Putting,One-Putts
+415,One-Putt Percentage - Round 2,Putting,One-Putts
+416,One-Putt Percentage - Round 3,Putting,One-Putts
+417,One-Putt Percentage - Round 4,Putting,One-Putts
+418,One-Putt Percentage - Round 5,Putting,One-Putts
+420,Total 1 Putts - Inside 5',Putting,One-Putts
+421,Total 1 Putts - 5-10',Putting,One-Putts
+422,Total 1 Putts - 10-15',Putting,One-Putts
+423,Total 1 Putts - 15-20',Putting,One-Putts
+424,Total 1 Putts - 20-25',Putting,One-Putts
+425,Total 1 Putts - > 25',Putting,One-Putts
+498,Longest Putts,Putting,One-Putts
+427,3-Putt Avoidance - Round 1,Putting,Three-Putts
+428,3-Putt Avoidance - Round 2,Putting,Three-Putts
+429,3-Putt Avoidance - Round 3,Putting,Three-Putts
+430,3-Putt Avoidance - Round 4,Putting,Three-Putts
+440,3-Putt Avoidance - Round 5,Putting,Three-Putts
+068,3-Putt Avoidance - Inside 5',Putting,Three-Putts
+069,3-Putt Avoidance - 5-10',Putting,Three-Putts
+070,3-Putt Avoidance - 10-15',Putting,Three-Putts
+145,3-Putt Avoidance - 15-20',Putting,Three-Putts
+146,3-Putt Avoidance - 20-25',Putting,Three-Putts
+147,3-Putt Avoidance > 25',Putting,Three-Putts
+441,Total 3 Putts - Inside 5',Putting,Three-Putts
+442,Total 3 Putts - 5-10',Putting,Three-Putts
+443,Total 3 Putts - 10-15',Putting,Three-Putts
+444,Total 3 Putts - 15-20',Putting,Three-Putts
+445,Total 3 Putts - 20-25',Putting,Three-Putts
+446,Total 3 Putts - > 25',Putting,Three-Putts
+408,Putting from - > 25',Putting,All Putts Made by Dist.
+02429,Putting from - > 20',Putting,All Putts Made by Dist.
+02328,Putting from 15-25',Putting,All Putts Made by Dist.
+407,Putting from - 20-25',Putting,All Putts Made by Dist.
+406,Putting from - 15-20',Putting,All Putts Made by Dist.
+02327,Putting from 5-15',Putting,All Putts Made by Dist.
+405,Putting from - 10-15',Putting,All Putts Made by Dist.
+404,Putting from 5-10',Putting,All Putts Made by Dist.
+02427,Putting from 3-5',Putting,All Putts Made by Dist.
+403,Putting from Inside 5',Putting,All Putts Made by Dist.
+348,Putting from 10',Putting,All Putts Made by Dist.
+347,Putting from 9',Putting,All Putts Made by Dist.
+346,Putting from 8',Putting,All Putts Made by Dist.
+345,Putting from 7',Putting,All Putts Made by Dist.
+344,Putting from 6',Putting,All Putts Made by Dist.
+343,Putting from 5',Putting,All Putts Made by Dist.
+356,Putting from - > 10',Putting,All Putts Made by Dist.
+485,Putting from 4-8',Putting,All Putts Made by Dist.
+342,Putting from 4',Putting,All Putts Made by Dist.
+341,Putting from 3',Putting,All Putts Made by Dist.
+434,Putts Made Per Event Over 10',Putting,All Putts Made by Dist.
+435,Putts Made Per Event Over 20',Putting,All Putts Made by Dist.
+438,Average Distance of Putts made,Putting,Avg. Putting Dist.
+02440,Average Distance of Birdie putts made,Putting,Avg. Putting Dist.
+02442,Average Distance of Eagle putts made,Putting,Avg. Putting Dist.
+135,Putts made Distance,Putting,Avg. Putting Dist.
+349,Approach Putt Performance,Putting,Avg. Putting Dist.
+409,Average Putting Distance - All 1 putts,Putting,Avg. Putting Dist.
+410,Average Putting Distance - All 2 putts,Putting,Avg. Putting Dist.
+411,Average Putting Distance - All 3 putts,Putting,Avg. Putting Dist.
+412,Average Putting Distance - All 3+ putts,Putting,Avg. Putting Dist.
+389,Average Putting Distance - GIR 1 Putts,Putting,Avg. Putting Dist.
+390,Average Putting Distance - GIR 2 Putts,Putting,Avg. Putting Dist.
+391,Average Putting Distance - GIR 3 Putts,Putting,Avg. Putting Dist.
+392,Average Putting Distance - GIR 3+ Putts,Putting,Avg. Putting Dist.
+073,GIR Putting Avg - > 35',Putting,GIR Putts Made by Dist.
+072,GIR Putting Avg - 30-35',Putting,GIR Putts Made by Dist.
+071,GIR Putting Avg - 25-30',Putting,GIR Putts Made by Dist.
+388,GIR Putting - > 25',Putting,GIR Putts Made by Dist.
+387,GIR Putting - 20-25',Putting,GIR Putts Made by Dist.
+386,GIR Putting - 15-20',Putting,GIR Putts Made by Dist.
+385,GIR Putting - 10-15',Putting,GIR Putts Made by Dist.
+384,GIR Putting - 5-10',Putting,GIR Putts Made by Dist.
+383,GIR Putting - Inside 5',Putting,GIR Putts Made by Dist.
+120,Scoring Average (Adjusted),Scoring,Scoring Leaders
+156,Birdie Average,Scoring,Scoring Leaders
+352,Birdie or Better Percentage,Scoring,Scoring Leaders
+02414,Bogey Avoidance,Scoring,Scoring Leaders
+142,Par 3 Scoring Average,Scoring,Scoring Leaders
+143,Par 4 Scoring Average,Scoring,Scoring Leaders
+144,Par 5 Scoring Average,Scoring,Scoring Leaders
+108,Scoring Average (Actual),Scoring,Scoring Overall
+116,Scoring Average Before Cut,Scoring,Scoring Overall
+02417,Stroke Differential Field Average,Scoring,Scoring Overall
+299,Lowest Round,Scoring,Scoring Overall
+152,Rounds in the 60s,Scoring,Scoring Overall
+153,Sub-Par Rounds,Scoring,Scoring Overall
+107,Total Birdies,Scoring,Under Par Scoring
+155,Eagles (Holes per),Scoring,Under Par Scoring
+106,Total Eagles,Scoring,Under Par Scoring
+105,Par Breakers,Scoring,Under Par Scoring
+160,Bounce Back,Scoring,Under Par Scoring
+02415,Birdie to Bogey Ratio,Scoring,Under Par Scoring
+112,Par 3 Birdie or Better Leaders,Scoring,Under Par Scoring
+113,Par 4 Birdie or Better Leaders,Scoring,Under Par Scoring
+114,Par 5 Birdie or Better Leaders,Scoring,Under Par Scoring
+447,Par 4 Eagle Leaders,Scoring,Under Par Scoring
+448,Par 5 Eagle Leaders,Scoring,Under Par Scoring
+02416,Reverse Bounce Back,Scoring,Over Par Scoring
+02419,Bogey Average,Scoring,Over Par Scoring
+118,Final Round Scoring Average,Scoring,Scoring by Round
+219,Final Round Performance,Scoring,Scoring by Round
+220,Top 10 Final Round Performance,Scoring,Scoring by Round
+309,Top 5 Final Round Performance,Scoring,Scoring by Round
+310,11-25 Final Round Performance,Scoring,Scoring by Round
+311,25+ Final Round Performance,Scoring,Scoring by Round
+453,6-10 Final Round Performance,Scoring,Scoring by Round
+148,Round 1 Scoring Average,Scoring,Scoring by Round
+149,Round 2 Scoring Average,Scoring,Scoring by Round
+117,Round 3 Scoring Average,Scoring,Scoring by Round
+285,Round 4 Scoring Average,Scoring,Scoring by Round
+286,Round 5 Scoring Average,Scoring,Scoring by Round
+245,Front 9 Round 1 Scoring Average,Scoring,Scoring by Round
+246,Back 9 Round 1 Scoring Average,Scoring,Scoring by Round
+253,Front 9 Round 2 Scoring Average,Scoring,Scoring by Round
+254,Back 9 Round 2 Scoring Average,Scoring,Scoring by Round
+261,Front 9 Round 3 Scoring Average,Scoring,Scoring by Round
+269,Front 9 Round 4 Scoring Average,Scoring,Scoring by Round
+277,Front 9 Round 5 Scoring Average,Scoring,Scoring by Round
+171,Par 3 Performance,Scoring,"Par 3,4,5 Scoring"
+172,Par 4 Performance,Scoring,"Par 3,4,5 Scoring"
+173,Par 5 Performance,Scoring,"Par 3,4,5 Scoring"
+223,Early Par 3 Scoring Average,Scoring,"Par 3,4,5 Scoring"
+231,Early Par 4 Scoring Average,Scoring,"Par 3,4,5 Scoring"
+239,Early Par 5 Scoring Average,Scoring,"Par 3,4,5 Scoring"
+224,Late Par 3 Scoring Average,Scoring,"Par 3,4,5 Scoring"
+232,Late Par 4 Scoring Average,Scoring,"Par 3,4,5 Scoring"
+240,Late Par 5 Scoring Average,Scoring,"Par 3,4,5 Scoring"
+02517,Par 3 efficiency < 100 yards,Scoring,Efficiency Scoring
+02518,Par 3 efficiency 100-125 yards,Scoring,Efficiency Scoring
+02519,Par 3 efficiency 125-150 yards,Scoring,Efficiency Scoring
+02520,Par 3 efficiency 150-175 yards,Scoring,Efficiency Scoring
+02521,Par 3 efficiency 175-200 yards,Scoring,Efficiency Scoring
+02522,Par 3 efficiency 200-225 yards,Scoring,Efficiency Scoring
+02523,Par 3 efficiency 225-250 yards,Scoring,Efficiency Scoring
+02524,Par 3 efficiency >250 yards,Scoring,Efficiency Scoring
+02525,Par 4 efficiency < 250 Yards,Scoring,Efficiency Scoring
+02526,Par 4 efficiency 250-300 yards,Scoring,Efficiency Scoring
+02527,Par 4 Efficiency 300-350 yards,Scoring,Efficiency Scoring
+02528,Par 4 Efficiency 350-400 yards,Scoring,Efficiency Scoring
+02529,Par 4 Efficiency 400-450 yards,Scoring,Efficiency Scoring
+02530,Par 4 Efficiency 450-500 yards,Scoring,Efficiency Scoring
+02531,Par 4 Efficiency >500 yards,Scoring,Efficiency Scoring
+02532,Par 5 Efficiency <500 yards,Scoring,Efficiency Scoring
+02533,Par 5 Efficiency 500-550 Yards,Scoring,Efficiency Scoring
+02534,Par 5 Efficiency 550-600 Yards,Scoring,Efficiency Scoring
+02535,Par 5 Efficiency 600-650 Yards,Scoring,Efficiency Scoring
+02536,Par 5 Efficiency >650 Yards,Scoring,Efficiency Scoring
+207,Front 9 Scoring Average,Scoring,Front 9 Scoring
+301,Front 9 Lowest Round,Scoring,Front 9 Scoring
+221,Front 9 Par 3 Scoring Average,Scoring,Front 9 Scoring
+229,Front 9 Par 4 Scoring Average,Scoring,Front 9 Scoring
+237,Front 9 Par 5 Scoring Average,Scoring,Front 9 Scoring
+208,Back 9 Scoring Average,Scoring,Back 9 Scoring
+302,Back 9 Lowest Round,Scoring,Back 9 Scoring
+222,Back 9 Par 3 Scoring Average,Scoring,Back 9 Scoring
+230,Back 9 Par 4 Scoring Average,Scoring,Back 9 Scoring
+238,Back 9 Par 5 Scoring Average,Scoring,Back 9 Scoring
+262,Back 9 Round 3 Scoring Average,Scoring,Back 9 Scoring
+270,Back 9 Round 4 Scoring Average,Scoring,Back 9 Scoring
+278,Back 9 Round 5 Scoring Average,Scoring,Back 9 Scoring
+292,Early Scoring Average,Scoring,Early Scoring
+303,Early Lowest Round,Scoring,Early Scoring
+209,First Tee Early Scoring Average,Scoring,Early Scoring
+210,Tenth Tee Early Scoring Average,Scoring,Early Scoring
+247,Early Round 1 Scoring Average,Scoring,Early Scoring
+255,Early Round 2 Scoring Average,Scoring,Early Scoring
+263,Early Round 3 Scoring Average,Scoring,Early Scoring
+271,Early Round 4 Scoring Average,Scoring,Early Scoring
+279,Early Round 5 Scoring Average,Scoring,Early Scoring
+225,First Tee Early Par 3 Scoring Average,Scoring,Early Scoring
+226,Tenth Tee Early Par 3 Scoring Average,Scoring,Early Scoring
+233,First Tee Early Par 4 Scoring Average,Scoring,Early Scoring
+234,Tenth Tee Early Par 4 Scoring Average,Scoring,Early Scoring
+241,First Tee Early Par 5 Scoring Average,Scoring,Early Scoring
+242,Tenth Tee Early Par 5 Scoring Average,Scoring,Early Scoring
+249,First Tee Early Round 1 Scoring Average,Scoring,Early Scoring
+250,Tenth Tee Early Round 1 Scoring Average,Scoring,Early Scoring
+257,First Tee Early Round 2 Scoring Average,Scoring,Early Scoring
+258,Tenth Tee Early Round 2 Scoring Average,Scoring,Early Scoring
+265,First Tee Early Round 3 Scoring Average,Scoring,Early Scoring
+266,Tenth Tee Early Round 3 Scoring Average,Scoring,Early Scoring
+273,First Tee Early Round 4 Scoring Average,Scoring,Early Scoring
+274,Tenth Tee Early Round 4 Scoring Average,Scoring,Early Scoring
+281,First Tee Early Round 5 Scoring Average,Scoring,Early Scoring
+282,Tenth Tee Early Round 5 Scoring Average,Scoring,Early Scoring
+305,First Tee Early Lowest Round,Scoring,Early Scoring
+306,Tenth Tee Early Lowest Round,Scoring,Early Scoring
+293,Late Scoring Average,Scoring,Late Scoring
+304,Late Lowest Round,Scoring,Late Scoring
+248,Late Round 1 Scoring Average,Scoring,Late Scoring
+256,Late Round 2 Scoring Average,Scoring,Late Scoring
+264,Late Round 3 Scoring Average,Scoring,Late Scoring
+272,Late Round 4 Scoring Average,Scoring,Late Scoring
+280,Late Round 5 Scoring Average,Scoring,Late Scoring
+211,First Tee Late Scoring Average,Scoring,Late Scoring
+212,Tenth Tee Late Scoring Average,Scoring,Late Scoring
+227,First Tee Late Par 3 Scoring Average,Scoring,Late Scoring
+228,Tenth Tee Late Par 3 Scoring Average,Scoring,Late Scoring
+235,First Tee Late Par 4 Scoring Average,Scoring,Late Scoring
+236,Tenth Tee Late Par 4 Scoring Average,Scoring,Late Scoring
+243,First Tee Late Par 5 Scoring Average,Scoring,Late Scoring
+244,Tenth Tee Late Par 5 Scoring Average,Scoring,Late Scoring
+251,First Tee Late Round 1 Scoring Average,Scoring,Late Scoring
+252,Tenth Tee Late Round 1 Scoring Average,Scoring,Late Scoring
+259,First Tee Late Round 2 Scoring Average,Scoring,Late Scoring
+260,Tenth Tee Late Round 2 Scoring Average,Scoring,Late Scoring
+267,First Tee Late Round 3 Scoring Average,Scoring,Late Scoring
+268,Tenth Tee Late Round 3 Scoring Average,Scoring,Late Scoring
+275,First Tee Late Round 4 Scoring Average,Scoring,Late Scoring
+276,Tenth Tee Late Round 4 Scoring Average,Scoring,Late Scoring
+283,First Tee Late Round 5 Scoring Average,Scoring,Late Scoring
+284,Tenth Tee Late Round 5 Scoring Average,Scoring,Late Scoring
+307,First Tee Late Lowest Round,Scoring,Late Scoring
+308,Tenth Tee Late Lowest Round,Scoring,Late Scoring
+122,Consecutive Cuts,Streaks,Streaks Leaders
+297,Consecutive Fairways Hit,Streaks,Streaks Leaders
+298,Consecutive GIR ,Streaks,Streaks Leaders
+02672,Consecutive Birdies Streak,Streaks,Streaks Leaders
+483,Holes without 3-Putt,Streaks,Streaks Leaders
+475,YTD Rounds in the 60s Streak,Streaks,Streaks Leaders
+137,YTD Consecutive Cuts,Streaks,Other Streaks
+296,Consecutive Sand Saves,Streaks,Around the Green Streaks
+295,Best YTD 1-Putt or Better Streak,Streaks,Putting Streaks
+294,Best YTD Streak w/o a 3-Putt,Streaks,Putting Streaks
+474,Best Rounds in 60's Streak,Streaks,Scoring Streaks
+476,Best Sub-Par Rounds Streak,Streaks,Scoring Streaks
+477,YTD Sub-Par Rounds Streak,Streaks,Scoring Streaks
+150,Current Par or Better Streak,Streaks,Scoring Streaks
+482,YTD Par or Better Streak,Streaks,Scoring Streaks
+449,Consecutive Par 3 Birdies,Streaks,Scoring Streaks
+450,Consecutive Par 4 Birdies,Streaks,Scoring Streaks
+451,Consecutive Par 5 Birdies,Streaks,Scoring Streaks
+452,Consecutive Holes Below Par,Streaks,Scoring Streaks
+02673,Consecutive Birdies/Eagles streak,Streaks,Scoring Streaks
+109,Official Money,Money/Finishes,Money
+110,Career Money Leaders,Money/Finishes,Money
+014,Career Earnings,Money/Finishes,Money
+139,Non-member Earnings,Money/Finishes,Money
+02677,Non-Member Off+WGC Earnings,Money/Finishes,Money
+02444,Money Leaders - Fall Series,Money/Finishes,Money
+02396,FedExCup Bonus Money,Money/Finishes,Money
+154,Money per Event Leaders,Money/Finishes,Money
+194,Total Money (Official and Unofficial),Money/Finishes,Money
+02337,Percentage of Available Purse Won,Money/Finishes,Money
+02447,Percentage of potential money won,Money/Finishes,Money
+138,Top 10 Finishes,Money/Finishes,Finishes
+300,Victory Leaders,Money/Finishes,Finishes
+02671,FedExCup Standings,Points/Rankings,Points
+02698,FedExCup Fall Points,Points/Rankings,Points
+02562,FedExCup Points per Event Leaders,Points/Rankings,Points
+02448,% of Potential Pts won - FedExCup Regular Season,Points/Rankings,Points
+02398,FedExCup Season Points for Non-Members,Points/Rankings,Points
+131,Ryder Cup Points,Points/Rankings,Points
+140,Presidents Cup Points (United States),Points/Rankings,Points
+187,Presidents Cup Points (International),Points/Rankings,Points
+02667,Non-WGC FedExCup Season Points for Non-Members,Points/Rankings,Points
+132,PGA Championship Points,Points/Rankings,Points
+127,All-Around Ranking,Points/Rankings,Rankings
+02685,FedEx Air & Ground ®,Points/Rankings,Rankings
+02689,FedEx Ground Top Performer ®,Points/Rankings,Rankings
+186,Official World Golf Ranking,Points/Rankings,Rankings
+085,Power Rating,Points/Rankings,Rankings
+086,Accuracy Rating,Points/Rankings,Rankings
+087,Short Game Rating,Points/Rankings,Rankings
+088,Putting Rating,Points/Rankings,Rankings
+02346,Scoring Rating,Points/Rankings,Rankings
+02347,Last 5 Events - Power,Points/Rankings,Rankings
+02348,Last 5 Events - Accuracy,Points/Rankings,Rankings
+02349,Last 5 Events - Short Game,Points/Rankings,Rankings
+02350,Last 5 Events - Putting,Points/Rankings,Rankings
+02351,Last 5 Events - Scoring,Points/Rankings,Rankings
+02352,Last 15 Events - Power,Points/Rankings,Rankings
+02353,Last 15 Events - Accuracy,Points/Rankings,Rankings
+02354,Last 15 Events - Short Game,Points/Rankings,Rankings
+02355,Last 15 Events - Putting,Points/Rankings,Rankings
+02356,Last 15 Events - Scoring,Points/Rankings,Rankings

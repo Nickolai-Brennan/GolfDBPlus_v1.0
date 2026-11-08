@@ -1,0 +1,3 @@
+query PlayoffShotDetailsCompressed($tournamentId: ID!) {
+  playoffShotDetailsCompressed(tournamentId: $tournamentId) { id payload }
+}

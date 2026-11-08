@@ -1,0 +1,283 @@
+stat_id,stat_name,category_id,category,subcategory
+2-1-17,Lowest 9-Hole Score,SCORING,Scoring,Round-By-Round Scoring
+2-1-11,Lowest 18-Hole Score,SCORING,Scoring,Round-By-Round Scoring
+2-1-10,Lowest 36-Hole Score (Opening),SCORING,Scoring,Round-By-Round Scoring
+2-1-35,Lowest 36-Hole Score (Consecutive),SCORING,Scoring,Round-By-Round Scoring
+2-1-9,Lowest 54-Hole Score (Opening),SCORING,Scoring,Round-By-Round Scoring
+2-1-365,Lowest 54-Hole Score (Consecutive),SCORING,Scoring,Round-By-Round Scoring
+2-1-6,Low Score in 72-Hole Event,SCORING,Scoring,Round-By-Round Scoring
+2-1-18,Most Strokes Under Par in 72-Hole Event (Since 1950),SCORING,Scoring,Round-By-Round Scoring
+2-1-31,Most Birdies in 72-Hole Event,SCORING,Scoring,Round-By-Round Scoring
+2-10-23,Longest Birdie Streak,SCORING,Scoring,In-Round Scoring Records
+2-10-25,Longest Birdie-Eagle Streak,SCORING,Scoring,In-Round Scoring Records
+2-10-29,Longest Birdie Streak to Win,SCORING,Scoring,In-Round Scoring Records
+2-12-89,Fewest Putts (18 Holes),SCORING,Scoring,Putting Records
+2-12-90,Fewest Putts (72 Holes),SCORING,Scoring,Putting Records
+2-12-91,Fewest Putts (9 Holes),SCORING,Scoring,Putting Records
+2-13-453,Last to Make Back-to-Back Eagles,SCORING,Scoring,The Last Time
+2-13-454,Last to Make Back-to-Back Eagles to Start a Round,SCORING,Scoring,The Last Time
+2-13-450,Last to Make Four Eagles in One Round,SCORING,Scoring,The Last Time
+2-13-455,Last to Make a Triple Bogey in Final Round and go on to Win,SCORING,Scoring,The Last Time
+2-13-456,Last to Make a Quadruple Bogey and go on to Win,SCORING,Scoring,The Last Time
+2-13-451,Last to Make Double Eagle and Hole-in-One in Same Round,SCORING,Scoring,The Last Time
+2-13-457,Last Time two Double Eagles in the Same Tournament,SCORING,Scoring,The Last Time
+2-13-458,"Last to Make a Hole-in-One, Eagle-2 and Eagle-3 in the Same Tournament",SCORING,Scoring,The Last Time
+2-13-452,"Last to Make a 2, 3, 4, 5 on Par-5s in Same Round",SCORING,Scoring,The Last Time
+2-13-542,Last Amateur to Shoot 60 or Better,SCORING,Scoring,The Last Time
+2-13-700,Last to Shoot his Age,SCORING,Scoring,The Last Time
+2-14-727,Most Career Wins (Top 50),WINS_FINISHES,Wins & Finishes,Wins
+2-14-51,Most Wins in One Season,WINS_FINISHES,Wins & Finishes,Wins
+2-14-71,Most Wins at One Tournament,WINS_FINISHES,Wins & Finishes,Wins
+2-14-162,Most Wins at One Course,WINS_FINISHES,Wins & Finishes,Wins
+2-14-425,Most Wins by Season,WINS_FINISHES,Wins & Finishes,Wins
+2-14-50,Longest Win Streak (Starts),WINS_FINISHES,Wins & Finishes,Wins
+2-14-726,Longest Win Streak (Weeks),WINS_FINISHES,Wins & Finishes,Wins
+2-14-160,Longest Win Streak (Tournament),WINS_FINISHES,Wins & Finishes,Wins
+2-14-53,First Two Career Wins in Same Tournament,WINS_FINISHES,Wins & Finishes,Wins
+2-14-49,Most Consecutive Seasons with a Win,WINS_FINISHES,Wins & Finishes,Wins
+2-14-897,Most Consecutive Seasons with a Win to Start a Career,WINS_FINISHES,Wins & Finishes,Wins
+2-14-68,Largest Winning Margin,WINS_FINISHES,Wins & Finishes,Wins
+2-14-65,Largest Final-Round Comeback,WINS_FINISHES,Wins & Finishes,Wins
+2-14-52,Longest Time Between First and Last Win at Same Tournament,WINS_FINISHES,Wins & Finishes,Wins
+2-14-159,Longest Time Between First and Second Win at Same Tournament,WINS_FINISHES,Wins & Finishes,Wins
+2-14-55,Longest Time Between First and Last Wins,WINS_FINISHES,Wins & Finishes,Wins
+2-14-75,Longest Time Between Wins,WINS_FINISHES,Wins & Finishes,Wins
+2-15-61,Youngest Winners (Since 1900),WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-62,Oldest Winners,WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-57,Most Wins by Players before Age 23,WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-56,Most Wins by Players before Age 30,WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-58,Most Wins by Players in Their 30s,WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-59,Most Wins by Players after Age 40,WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-728,Most Consecutive Tournaments Won by Players in Their 20s (Since 1970),WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-63,Oldest First-Time Winners (Since 1970),WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-60,Youngest to Win Five Tournaments,WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-730,Youngest to Win 10 Tournaments (Since WWII),WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-731,Youngest to Win a World Golf Championships Tournament,WINS_FINISHES,Wins & Finishes,Winners By Age
+2-15-732,Oldest to Win a World Golf Championships Tournament,WINS_FINISHES,Wins & Finishes,Winners By Age
+2-16-54,Most First-Time Winners in a Season,WINS_FINISHES,Wins & Finishes,Types Of Winners
+2-16-733,Father and Son to Win,WINS_FINISHES,Wins & Finishes,Types Of Winners
+2-16-734,Grandfather and Grandson to Win,WINS_FINISHES,Wins & Finishes,Types Of Winners
+2-16-735,Brothers to Win,WINS_FINISHES,Wins & Finishes,Types Of Winners
+2-16-64,Amateurs to Win (Since 1940),WINS_FINISHES,Wins & Finishes,Types Of Winners
+2-16-736,Most Wins by a Left-Handed Player,WINS_FINISHES,Wins & Finishes,Types Of Winners
+2-16-894,First-Time Winners (Since 1970),WINS_FINISHES,Wins & Finishes,Types Of Winners
+2-17-899,Most Top-10s in a Season (Since 1980),WINS_FINISHES,Wins & Finishes,Top-10s
+2-17-98,Most Top-10s in a Season (All-Time),WINS_FINISHES,Wins & Finishes,Top-10s
+2-17-97,Most Top-10s in a Career (All-Time),WINS_FINISHES,Wins & Finishes,Top-10s
+2-17-1000,Most Top-10s in a Career (Since 1980),WINS_FINISHES,Wins & Finishes,Top-10s
+2-17-737,Most Consecutive Top-10s,WINS_FINISHES,Wins & Finishes,Top-10s
+2-17-106,Oldest to Finish in Top 10,WINS_FINISHES,Wins & Finishes,Top-10s
+2-18-460,Last to Win Back-to-Back Starts,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-461,Last to Win First Two Starts of Season,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-462,Last to Win Three Consecutive Starts,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-1001,Last to Win Four Consecutive Starts,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-163,Last to Win Back-to-Back Tournaments,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-464,Last to Win Three Consecutive Tournaments,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-465,Last to Win Four Consecutive Tournaments,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-466,Last to Successfully Defend a Title,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-467,Last to Earn First Two Wins in Same Tournament (Back-to-Back),WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-468,Last to Earn First Three Wins in Same Tournament,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-469,Last to Earn First Two Wins in Consecutive Tournaments,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-1003,Last to Earn First Two Wins in Consecutive Starts,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-470,Last to Earn First Three Wins in Consecutive Starts,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-1002,Last to Win Same Tournament in Three Consecutive Seasons,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-471,Last to Win Same Tournament in Four Consecutive Seasons,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-427,Last to Successfully Defend a Title the Week after Winning a Tournament,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-473,Last Back-to-Back Tournaments with Successful Title Defenses,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-474,Last Wire-to-Wire Winner,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-475,Last Rookie Wire-to-Wire Winner,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-476,"Last to Win Same Tournament, Back-to-Back, Wire-to-Wire",WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-477,Last Back-to-Back Tournaments Won Wire-to-Wire,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-478,Last Rookie to Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-479,Last Rookie to Win Twice in a Season,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-701,Last Left-Handed Player to Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-480,Last Tournament with Left-Handed Winner and Runner-up,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-481,Last Amateur to Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-69,Last Monday Qualifier to Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-483,Last Non-Member to Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-485,Last Sponsor Exemption to Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-486,Last Alternate to Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-487,Last Special Temporary Member to Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-488,Last Time Five Consecutive First-Time Winners,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-489,Last to Win in First PGA Tour Start,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-310,Last to Win in First Start as Official PGA Tour Member,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-491,Last to Lose a Playoff One Week and Win a Tournament the Next,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-492,Last to Win a Tournament One Week and Lose a Playoff the Next,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-493,Last to Win Same Tournament in a Playoff in Consecutive Seasons,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-494,Last to Win a Tournament a Season After Losing it in a Playoff,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-495,Last Time Three or More Consecutive Winners in Their 40s,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-703,Last Time Three Consecutive European Winners,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-704,Last to Win with Even-Par or Worse Score,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-67,Last to Win with Even-Par or Worse Score (Non-Major),WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-706,Last to Win Without a Birdie in the Final Round,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-707,Last to Win with Over-Par Scores in Each of the Last Two Rounds,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-708,Last to Play 72 Holes without a Bogey and Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-709,Last to Play 72 Holes without a Bogey and Not Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-710,Last to Win 54-Hole Tournament without a Bogey,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-711,Last to Record a Score of 80 or Higher and go on to Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-712,Last to Win after Holing Final Shot from off the Green,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-713,Last to Win by Playing Final Two Holes in 3-under or Better,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-714,Last to Win by Playing Final Four Holes in 5-under,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-715,Last to Win when Teeing off No. 10 in Final Round,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-716,Last to Make the Cut on the Number and go on to Win,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-717,Last to Win with Wife as Caddie,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-718,Last to Win with Sister as Caddie,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-719,Last to Win with Brother as Caddie,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-720,Last to Win with Father as Caddie,WINS_FINISHES,Wins & Finishes,The Last Time
+2-18-721,Last to be in Last Place after First Round and Finish in Top 10,WINS_FINISHES,Wins & Finishes,The Last Time
+2-21-81,All-Time Wins (Majors),MAJOR_CHAMPIONSHIPS,Major Championships,Wins
+2-21-82,Grand Slam Winners,MAJOR_CHAMPIONSHIPS,Major Championships,Wins
+2-21-723,Longest Time Between First and Second Major Wins,MAJOR_CHAMPIONSHIPS,Major Championships,Wins
+2-22-83,Youngest Major Winners (Since 1900),MAJOR_CHAMPIONSHIPS,Major Championships,Age
+2-22-724,Youngest to Win Three Majors (since 1934),MAJOR_CHAMPIONSHIPS,Major Championships,Age
+2-22-739,Youngest to Play in Masters Tournament,MAJOR_CHAMPIONSHIPS,Major Championships,Age
+2-22-1004,Youngest to Play in PGA Championship,MAJOR_CHAMPIONSHIPS,Major Championships,Age
+2-22-1005,Youngest to Play in U.S. Open,MAJOR_CHAMPIONSHIPS,Major Championships,Age
+2-22-1006,Youngest to Play in The Open Championship,MAJOR_CHAMPIONSHIPS,Major Championships,Age
+2-22-84,Oldest Major Winners,MAJOR_CHAMPIONSHIPS,Major Championships,Age
+2-22-738,Oldest First-Time Major Winners (since 1960),MAJOR_CHAMPIONSHIPS,Major Championships,Age
+2-22-105,Oldest to Make Cut in a Major,MAJOR_CHAMPIONSHIPS,Major Championships,Age
+2-22-107,Oldest to Finish in Top 10 in a Major,MAJOR_CHAMPIONSHIPS,Major Championships,Age
+2-24-86,Last to Win Consecutive Tournaments (including a Major),MAJOR_CHAMPIONSHIPS,Major Championships,The Last Time
+2-24-743,Last to Win Multiple Majors in the Same Season,MAJOR_CHAMPIONSHIPS,Major Championships,The Last Time
+2-24-744,Last to Successfully Defend Title at a Major,MAJOR_CHAMPIONSHIPS,Major Championships,The Last Time
+2-24-745,Last to Win Consecutive Majors,MAJOR_CHAMPIONSHIPS,Major Championships,The Last Time
+2-24-746,Last to Win Three Consecutive Majors,MAJOR_CHAMPIONSHIPS,Major Championships,The Last Time
+2-24-747,Last to Win Four Consecutive Majors,MAJOR_CHAMPIONSHIPS,Major Championships,The Last Time
+2-24-748,Last to Earn First PGA Tour Win at a Major,MAJOR_CHAMPIONSHIPS,Major Championships,The Last Time
+2-4-765,Longest Sudden-Death Playoff,PLAYOFFS,Playoffs,Playoff Records
+2-4-87,Most Players in Sudden-Death Playoff,PLAYOFFS,Playoffs,Playoff Records
+2-4-766,Most Playoff Appearances in a Season,PLAYOFFS,Playoffs,Playoff Records
+2-4-88,Most Playoffs in a Season,PLAYOFFS,Playoffs,Playoff Records
+2-6-767,Individual Playoff Records,PLAYOFFS,Playoffs,
+2-4-768,Tournament Playoff Records,PLAYOFFS,Playoffs,
+2-31-769,Last to Win Playoff in Consecutive Weeks,PLAYOFFS,Playoffs,The Last Time
+2-31-770,Last to Win Playoff in Consecutive Starts,PLAYOFFS,Playoffs,The Last Time
+2-31-771,Last to Lose Playoff in Consecutive Tournaments,PLAYOFFS,Playoffs,The Last Time
+2-31-772,Last to Lose Playoff in Consecutive Seasons in Same Tournament,PLAYOFFS,Playoffs,The Last Time
+2-31-773,Last to Earn First Three Wins in Playoffs,PLAYOFFS,Playoffs,The Last Time
+2-31-774,Last to Lose Three Playoffs in a Season,PLAYOFFS,Playoffs,The Last Time
+2-31-775,Last to Win Playoff with Eagle,PLAYOFFS,Playoffs,The Last Time
+2-31-776,Last to Win Playoff with Bogey,PLAYOFFS,Playoffs,The Last Time
+2-31-777,Last to Win Playoff with Double Bogey,PLAYOFFS,Playoffs,The Last Time
+2-31-778,Last Three-Hole Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-779,Last Three-Hole Aggregate Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-780,Last Four-Hole Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-781,Last Four-Hole Aggregate Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-782,Last Five-Hole Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-783,Last Six-Hole Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-784,Last Seven-Hole Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-785,Last Eight-Hole Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-787,"Last Time Three Consecutive, Multi-Hole Playoffs",PLAYOFFS,Playoffs,The Last Time
+2-31-788,Last Time Four Consecutive Playoffs,PLAYOFFS,Playoffs,The Last Time
+2-31-789,Last Time 18-Hole Aggregate Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-790,Last 18-Hole+ Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-792,Last 36-Hole Aggregate Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-793,Last 54-Hole Aggregate Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-794,Last 72-Hole Aggregate Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-795,Last Four-Man Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-796,Last Five-Man Playoff,PLAYOFFS,Playoffs,The Last Time
+2-31-797,Last Six-Man Playoff,PLAYOFFS,Playoffs,The Last Time
+2-25-101,Youngest to Play,AGE,Age,Age-Related Records
+2-25-103,Oldest to Play,AGE,Age,Age-Related Records
+2-50-752,Most Leads Entering Final Round Converted to a Win,LEADS,Leads,Leads
+2-50-66,Largest Lead with 18 Holes to Play,LEADS,Leads,Leads
+2-50-163,Largest Lead Lost with 18 Holes to Play,LEADS,Leads,Leads
+2-26-753,Last Amateur to Lead After Any Round,LEADS,Leads,The Last Time
+2-26-754,Last Amateur to Play in the Final Group of the Final Round,LEADS,Leads,The Last Time
+2-26-755,Last Player to Hold Lead/Co-Lead in First Round as a Professional,LEADS,Leads,The Last Time
+2-26-756,Last Player to Hold First-Round Lead/Co-Lead and Miss the Cut,LEADS,Leads,The Last Time
+2-26-757,Last Leader/Co-Leader After Any Round to Withdraw,LEADS,Leads,The Last Time
+2-51-95,Most Consecutive Cuts Made,CUT,Cut,Cuts
+2-51-96,Most Career Cuts Made,CUT,Cut,Cuts
+2-27-102,Youngest to Make Cut,CUT,Cut,Age-Related
+2-27-104,Oldest to Make Cut,CUT,Cut,Age-Related
+2-30-764,Last Father/Son to Make the Cut in the Same Tournament,CUT,Cut,The Last Time
+2-52-799,Most Holes-in-One (Since PGA Tour Began Tracking Hole-by-Hole in 1983),HOLES_IN_ONE,Holes-In-One,Holes-in-One
+2-52-800,Season with Most Holes-in-One (Since 1971),HOLES_IN_ONE,Holes-In-One,Holes-in-One
+2-52-801,Holes-in-One by Player,HOLES_IN_ONE,Holes-In-One,Holes-in-One
+2-52-802,Longest Time Between First and Last Hole-in-One,HOLES_IN_ONE,Holes-In-One,Holes-in-One
+2-32-803,Last Time Four Holes-in-One on Same Hole on Same Day,HOLES_IN_ONE,Holes-In-One,The Last Time
+2-32-804,Last to Make a Hole-in-One on the First Hole of a Round,HOLES_IN_ONE,Holes-In-One,The Last Time
+2-32-805,Last Time Three Holes-in-One in a Round,HOLES_IN_ONE,Holes-In-One,The Last Time
+2-32-806,Last to Make a Hole-in-One and go on to Win,HOLES_IN_ONE,Holes-In-One,The Last Time
+2-32-807,Last Time Eight Holes-in-One in a Tournament,HOLES_IN_ONE,Holes-In-One,The Last Time
+2-32-92,Last to Make Two Holes-in-One in a Round,HOLES_IN_ONE,Holes-In-One,The Last Time
+2-32-93,Last to Make Two Holes-in-One in a Tournament,HOLES_IN_ONE,Holes-In-One,The Last Time
+2-32-94,Last to Make Hole-in-One on a Par-4,HOLES_IN_ONE,Holes-In-One,The Last Time
+2-32-808,Last Amateur to Record a Hole-in-One,HOLES_IN_ONE,Holes-In-One,The Last Time
+2-32-809,Last to Make Double Eagle and Hole-in-One in a Round,HOLES_IN_ONE,Holes-In-One,The Last Time
+2-32-896,Last to Make a Hole-in-One in First Professional Start (Since 1983),HOLES_IN_ONE,Holes-In-One,The Last Time
+2-43-846,Most Official Money Earned in a Single Season,MONEY,Money,Money Won
+2-43-112,Most Official Money Earned by a Rookie,MONEY,Money,Money Won
+2-43-116,Most Official Money Earned in a Single Season without a Victory,MONEY,Money,Money Won
+2-43-847,Youngest to Earn $1 Million or More in Official Money in a Single Season,MONEY,Money,Money Won
+2-43-850,Biggest One-Season Gains in Official Money,MONEY,Money,Money Won
+2-44-851,Season-by-Season Official Money Leaders,MONEY,Money,Money List
+2-44-852,Most Consecutive Seasons Finishing in Top 10 on Official Money List,MONEY,Money,Money List
+2-44-115,Most Seasons Finishing in Top 10 on Official Money List,MONEY,Money,Money List
+2-44-853,Most Consecutive Seasons Finishing in Top 125 on Official Money List,MONEY,Money,Money List
+2-44-113,Most Seasons Finishing No. 1 on Official Money List,MONEY,Money,Money List
+2-44-854,Largest Margin between No. 1 and No. 2 on Official Money List,MONEY,Money,Money List
+2-45-856,Growth of Purses,MONEY,Money,Growth Of Purses
+2-46-857,Longest Streak at No. 1,OWGR,OWGR,Official World Golf Ranking
+2-46-858,Most Weeks at No. 1,OWGR,OWGR,Official World Golf Ranking
+2-46-1008,No. 1 Timeline,OWGR,OWGR,Official World Golf Ranking
+2-47-859,First African-American to Play,FIRSTS,Firsts,Firsts
+2-47-860,First African-American to Win,FIRSTS,Firsts,Firsts
+2-47-1007,First African-American to Play Sponsored Tournament,FIRSTS,Firsts,Firsts
+2-47-861,Women to Play,FIRSTS,Firsts,Firsts
+2-48-1013,Last Tournament Spectators Were Not Allowed to Attend for at Least One Day,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-862,Last Monday Finish (unscheduled),WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-863,Last Tuesday Finish,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-864,Last 54-Hole Tournament,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-865,Last 36-Hole Tournament,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-866,Last 36-Hole Final Day,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-868,Last Cut Made after 18 Holes,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-869,Last Cut Made Closest to 60,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-873,Last Time a Tournament had Consecutive Monday Finishes (unscheduled),WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-874,Last Time Back-to-Back Tournaments had Monday Finishes,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-875,Last Time Three Consecutive Tournaments had Monday Finishes,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-876,Last Time a Round Restarted,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-877,Last Time Players were not Re-Grouped between Third and Final Rounds,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-878,Last Time it Snowed during a Tournament,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-879,Last Time a Tournament was Cancelled and not Rescheduled,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-880,Last Time a Tournament was Suspended and Continued Later in the Season,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-882,Last Round Suspended by Wind,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-883,Last Round Suspended by Fog,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-884,Last Round Suspended by Hail,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-885,Last Round Suspended by Frost,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+2-48-887,Last Tournament Cancelled for Reasons other than Weather,WEATHER_TOURNAMENT_FINISHES,Weather & Tournament Finishes,Last Time - Weather & Tournament Finishes
+4-1-117,Low 9,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-118,Low 18,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-119,Low First 18,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-120,Low First 36,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-122,Low First 54,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-124,Low 72,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-125,Highest 72-Hole Winning Score,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-126,Largest Winning Margin,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-127,Low Start by a Winner,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-128,High Start by a Winner,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-129,Low Finish by a Winner,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-130,High Finish by a Winner,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-131,Largest 18-Hole Lead,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-132,Largest 36-Hole Lead,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-133,Large 54-Hole Lead,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-134,Low 36-Hole Cut,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-135,High 36-Hole Cut,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-136,Fewest to Make 36-Hole Cut (not Including Masters nor U.S. Open),ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-137,Most to Make 36-Hole Cut,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-138,"Most Tied For Lead, 18 Holes",ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-139,"Most Tied For Lead, 36 Holes",ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-140,"Most Tied For Lead, 54 Holes",ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-141,Most Consecutive Events in the Money,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-142,Consecutive Season With Win (since 1970),ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-143,"Holes-in-One, By Year (since 1971)",ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-146,Three Eagles in One Round,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-144,Double Eagles (since 1970),ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-150,Best Birdie-Eagle Streak,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-151,Best Come-From-Behind Last Day to Win,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-154,Three or More Victories,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-155,Wire-To-Wire Winners,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+4-1-156,First-Time Winners,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Facts and Figures (1970 through 2021-22)
+2-33-811,Average Driving Distance,ALL_TIME_FACTS_AND_FIGURES,All-Time-Facts-And-Figures,Average Driving Distance

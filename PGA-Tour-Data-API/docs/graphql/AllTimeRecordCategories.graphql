@@ -1,0 +1,16 @@
+query AllTimeRecordCategories($tourCode: TourCode!) {
+    allTimeRecordCategories(tourCode: $tourCode) {
+      tourCode
+      categories {
+        categoryId
+        displayText
+        subCategories {
+          displayText
+          statistics {
+            recordId
+            displayText
+          }
+        }
+      }
+    }
+  }
