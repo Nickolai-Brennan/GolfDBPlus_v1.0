@@ -50,6 +50,8 @@ The [checked-in Parquet and TSV snapshots](../../Data/Source-Files/README.md) do
 
 ## Historical player identity audit
 
+**PGATourID is the master player identifier.** The [player directory](../../docs/data/player_ids.csv) stores it in `pga_player_id`. Keep it as text. The database uses an internal UUID for relationships. Resolve a verified PGATourID through `resolve_player('pgatour', external_id)` in [intake.sql](../Queries/intake.sql) before promotion. Keep rows staged when either the verified master ID or its canonical UUID mapping is missing. Data Golf and ESPN IDs serve as provider cross-references.
+
 Run from the repository root with Python 3.10+.
 
 ```bash
@@ -60,7 +62,7 @@ The audit is tied to the [checksummed source files](../../Data/Source-Files/READ
 
 | Status | Promotion rule |
 | --- | --- |
-| `verified_datagolf` | Resolve the emitted ID using `resolve_player('datagolf', external_id)` in [intake.sql](../Queries/intake.sql). Keep the row staged if the mapping has no canonical UUID. |
+| `datagolf_verified_pgatour_pending` | The Data Golf ID is verified against the source rounds. Keep the result staged until its PGATourID is independently verified and mapped. |
 | `name_candidate` | Review the single PGA TOUR candidate against event-specific identity evidence before using it. |
 | `ambiguous_name` | Keep staged until an authoritative player ID disambiguates the candidates. |
 | `unmatched` | Keep staged pending an authoritative identity match. |

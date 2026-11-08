@@ -45,6 +45,7 @@ def masters_rounds(path):
 
 def reconcile(results_path, rounds_path, directory_path, output):
     ids, rounds = masters_rounds(rounds_path)
+    # The PGA TOUR directory supplies master IDs, but name matches are only hints.
     candidates = defaultdict(set)
     with directory_path.open(encoding="utf-8-sig", newline="") as directory:
         for row in csv.DictReader(directory):
@@ -68,7 +69,7 @@ def reconcile(results_path, rounds_path, directory_path, output):
                     raise ValueError(f"Masters identity or round score conflict at row {row_number}")
                 matched.add(key)
                 player_id = ids[key]
-                status = "verified_datagolf"
+                status = "datagolf_verified_pgatour_pending"
             audit.append((row_number, *edition, row["name"], status,
                           player_id, "|".join(hints)))
 
