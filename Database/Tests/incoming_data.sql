@@ -65,5 +65,13 @@ BEGIN
         AND avg_to_par_per_hole=-0.5) <> 2 THEN
         RAISE EXCEPTION 'Season and event difficulty splits did not reconcile';
     END IF;
+    IF NOT EXISTS (SELECT 1 FROM analytics.event_data_coverage
+        WHERE event_id=e AND round_rows=2 AND hole_rows=2 AND result_publications=0) THEN
+        RAISE EXCEPTION 'Event coverage counts did not reconcile';
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM analytics.player_par_scoring
+        WHERE event_id=e AND player_id=p AND round_number=2 AND par=5 AND total_to_par=-1) THEN
+        RAISE EXCEPTION 'Player par scoring ignored the round setup';
+    END IF;
 END $$;
 ROLLBACK;

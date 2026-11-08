@@ -14,6 +14,7 @@ psql "$DATABASE_URL" -v ON_ERROR_STOP=1 \
 | 1 | [UUID foundation](001_golfdb_foundation.sql) | Canonical player, course, event, tour, season and content tables. |
 | 2 | [Core reference](002_core_foundations.sql) | Shared lookup vocabulary, units, sources and optional reference links. |
 | 3 | [Incoming data](003_incoming_data.sql) | Staging, provider IDs, facts, outputs and reporting views. |
+| 4 | [Query views](004_query_views.sql) | Player par scoring and event and intake coverage. |
 
 Run the same installer for a database already on the UUID foundation. It adds tables and seeds mappings from the legacy columns. Future writes use the mapping tables. Review any provider IDs assigned independently in older pipelines before import. Installer roles need schema creation, table alteration and extension permissions where applicable.
 
