@@ -25,6 +25,8 @@ The [migration](../Schema/003_incoming_data.sql) defines column types, keys, nul
 
 ## Source routing
 
+The [checked-in 2026 Parquet snapshots](../../Data/Source-Files/README.md) document source grain, event coverage, and integrity checks.
+
 | Feed or file | Stage and promote | Join and validation |
 | --- | --- | --- |
 | PGA TOUR schedule REST, `Tournaments`, `TournamentOverview` | Tour/season, edition, venues, `event_info`, schedule view | Resolve official edition IDs and venue IDs. Keep tournament and leaderboard namespaces separate. Check source labels before treating awards as purse or winner points. |
@@ -36,6 +38,9 @@ The [migration](../Schema/003_incoming_data.sql) defines column types, keys, nul
 | `StatOverview`, `StatDetails`, `ScorecardStatsV3Compressed` | Metric mapping and `player_statistics` | Keep leading zeroes in IDs. Review unit, denominator, time grain and effective date before promotion. |
 | `ScorecardStatsComparisonCategories` | Staged category metadata | Category pills contain labels. Use the scorecard stats operation for numeric values. |
 | `shotDetailsV4Compressed`, `TourcastVideos` | Immutable payload and staged decoded records | Preserve event/player/round, radar option, coordinate frame, and share URL. Canonical per-shot publishing is still separate from this incoming-data schema. |
+| [2026 course setup Parquet](../../Data/Source-Files/course_setup_2026.parquet) | Staged event/course/round/hole setup candidates for `course_scorecard` | Resolve edition and course IDs, then validate par and yardage. Preserve pin coordinates in staging until the frame is verified. |
+| [2026 shots Parquet](../../Data/Source-Files/shots_2026.parquet) | Staged shot records for offline analysis and later promotion | Preserve every source row. Resolve provider IDs and review repeated candidate keys before assigning shot identities. |
+| [2026 tee times Parquet](../../Data/Source-Files/tee_times_2026.parquet) | Staged player/round assignment candidates for `player_round` | Resolve the event, player and course. Keep UTC time and source timezone. A scheduled start alone does not establish a played round. |
 | Historical results TSV | Staged event/player candidates and final results | Edition key includes season, dates, title and location. Player name alone is insufficient. Verify status, currency and points before publishing. |
 | Data Golf 2021 round TSV | Provider IDs, rounds and statistics | Scope the event ID by tour/season. Map `dg_id`, `course_num`, and round number independently. |
 | ASA tournament-level CSV archive | Historical tournament-level evidence | Keep its grain separate from player rounds and hole observations. |
