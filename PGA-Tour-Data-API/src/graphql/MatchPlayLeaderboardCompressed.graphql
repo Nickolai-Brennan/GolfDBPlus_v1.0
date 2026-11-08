@@ -1,0 +1,3 @@
+query MatchPlayLeaderboardCompressed($matchPlayLeaderboardCompressedId: ID!) {
+ matchPlayLeaderboardCompressed(id: $matchPlayLeaderboardCompressedId) { id payload }
+}

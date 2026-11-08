@@ -1,0 +1,3 @@
+query TeamStrokePlayLeaderboardCompressed($teamStrokePlayLeaderboardCompressedId: ID!) {
+ teamStrokePlayLeaderboardCompressed(id: $teamStrokePlayLeaderboardCompressedId) { id payload }
+}
