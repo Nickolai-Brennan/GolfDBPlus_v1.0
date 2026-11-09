@@ -1,5 +1,7 @@
 # GolfDB+ PostgreSQL migrations
 
+Browse [tables, views, and queries by schema](../Schemas/README.md).
+
 Apply the canonical UUID-based migration set with PostgreSQL 15+ and `psql`.
 
 ```bash
