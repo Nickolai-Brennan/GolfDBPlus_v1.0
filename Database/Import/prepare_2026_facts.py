@@ -109,7 +109,10 @@ def main():
     times = pd.read_parquet(DATA / "tee_times_2026.parquet")
     if any(not frame.season.eq(2026).all() for frame in (shots, setup, times)):
         raise ValueError("Unexpected season in 2026 archive")
-    leaderboard = pd.read_csv(API / f"leaderboard_{EVENT}.csv", dtype={"player_id": str})
+    leaderboard = pd.read_csv(API / f"leaderboard_{EVENT}.csv", dtype={"player_id": str}).dropna(how="all")
+    if (not leaderboard.player_id.str.fullmatch(r"[0-9]+", na=False).all()
+            or leaderboard.player_id.duplicated().any()):
+        raise ValueError("Invalid or duplicate player ID in archived leaderboard")
     rcols = [f"round_{i}" for i in range(1, 5)]
     results = leaderboard.melt(id_vars="player_id", value_vars=rcols, var_name="round", value_name="published")
     results["round"] = results["round"].str[-1].astype(int)
