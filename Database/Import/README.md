@@ -35,3 +35,19 @@ WHERE model_version='putt-outcomes-2026-v1';
 The model uses the previous physical stroke's measured remaining distance, when the stroke sequence establishes it before the putt. Logistic regression uses cubic features of log-transformed distance. A temperature is fitted on June events. Events starting in July or later are held out, including the replay event. Outcome labels are holed, missed within three feet, and missed beyond three feet. This is a retrospective distance-only baseline for putts, with no inferred club, weather, wellness, strokes gained, or target zone.
 
 See [fit and holdout metrics](putt-outcomes-2026-v1.json) for sample counts, coefficients, temperature, log loss, Brier score and classwise calibration error. The loader only emits predictions after the holdout gate passes. The replay writes versioned outputs through `performance.shot_performance_predictability_output`. Use the [shot display export instructions](../Schema/README.md#shot-model-display) to open those rows in the browser.
+
+## April 2021 Masters provider stats
+
+[Migration 007](../Schema/007_reviewed_stat_mappings.sql) maps the six PGA TOUR strokes-gained IDs to their published per-round average definitions. It separately maps 11 Data Golf archive fields to player-round definitions. The two provider series retain their original grain and provenance. See the [PGA TOUR SG: Total definition](https://www.pgatour.com/stats/detail/02675) and [Data Golf field notes](https://datagolf.com/raw-data-notes).
+
+Run from the repository root against a database with the schema and PGA TOUR player registry already installed.
+
+```bash
+psql "$DATABASE_URL" -X -v ON_ERROR_STOP=1 -f Database/Schema/007_reviewed_stat_mappings.sql
+python Database/Import/prepare_masters_stats.py > /tmp/golfdb-masters-stats.sql
+psql "$DATABASE_URL" -X -v ON_ERROR_STOP=1 -f /tmp/golfdb-masters-stats.sql
+```
+
+The generator reuses the verified Masters roster and reconciles every round score against the historical results. The load resolves PGATourID to canonical player UUIDs, preserves archive checksums, and stages unmapped or conflicting identities for review. It leaves blank metrics null by omitting those facts. The three percentage fields are converted from fractions to the 0–100 scale. Existing conflicting round scores or venue IDs abort the transaction.
+
+Use `provider_stat_publication` in [catalog.sql](../Queries/catalog.sql) with provider `datagolf`, an archive field such as `sg_total`, season `2021-PGA`, the Masters event UUID, a round, and the observation ID printed by the load. PGA TOUR averages require a verified native publication. Repository fixtures are for tests and must stay out of the observations table. Unreviewed catalog IDs remain discoverable without a canonical mapping.

@@ -5,3 +5,4 @@
 \ir 004_query_views.sql
 \ir 005_performance_statistics.sql
 \ir 006_query_catalog.sql
+\ir 007_reviewed_stat_mappings.sql
