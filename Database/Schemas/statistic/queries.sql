@@ -2,6 +2,68 @@
 -- Schema-organized reference. Use Database/Schema/install.psql to install database objects.
 -- PREPARE statements are scoped to the current database session.
 
+-- Source: Queries/catalog.sql
+PREPARE player_event_history(uuid, text, integer, integer) AS
+SELECT s.*, e.event_name, e.starts_on, e.ends_on
+FROM statistic.results_events_positioning s
+JOIN public.events e ON e."eventsID" = s.event_id
+WHERE s.player_id = $1 AND ($2 IS NULL OR s.season_id = $2)
+ORDER BY e.starts_on DESC NULLS LAST, s.event_id, s.observation_id DESC
+LIMIT LEAST(GREATEST(COALESCE($3, 100), 1), 500)
+OFFSET GREATEST(COALESCE($4, 0), 0);
+
+-- Source: Queries/catalog.sql
+PREPARE event_round_field(uuid, smallint) AS
+SELECT r.player_id, r.player_name, r.course_id, r.round_number, r.tee_time, r.score, r.over_under
+FROM statistic.results_scoring_round r
+WHERE r.event_id = $1 AND ($2 IS NULL OR r.round_number = $2)
+ORDER BY r.round_number, r.tee_time NULLS LAST, r.player_id;
+
+-- Source: Queries/catalog.sql
+PREPARE stat_catalog_search(text, text, text) AS
+SELECT c.*, m.metric_code, m.metric_version, d.unit_code
+FROM statistic.provider_stat_catalog c
+LEFT JOIN intake.metric_id_mapping m USING (provider, external_id)
+LEFT JOIN analytics.metric_definition d
+  ON (d.metric_code, d.version) = (m.metric_code, m.metric_version)
+WHERE c.provider = $1 AND ($2 IS NULL OR c.category = $2)
+  AND ($3 IS NULL OR c.external_id = $3 OR strpos(lower(c.label), lower($3)) > 0)
+ORDER BY c.category, c.subcategory, c.label, c.external_id;
+
+-- Source: Queries/catalog.sql
+PREPARE published_ranking(text, text, text, bigint) AS
+SELECT r.*, p.player_fullname
+FROM statistic.player_ranking_publication r
+JOIN public.players_tracking p ON p.playerid = r.player_id
+WHERE (r.provider,r.ranking_code,r.scope_key,r.observation_id) = ($1,$2,$3,$4)
+ORDER BY r.position, r.player_id;
+
+-- Source: Queries/catalog.sql
+PREPARE player_ranking_history(uuid, text, text, text, timestamptz, timestamptz) AS
+SELECT r.*, o.observed_at, o.source_published_at
+FROM statistic.player_ranking_publication r
+JOIN intake.observation o USING (observation_id)
+WHERE (r.player_id,r.provider,r.ranking_code,r.scope_key) = ($1,$2,$3,$4)
+  AND COALESCE(o.source_published_at, o.observed_at) >= $5
+  AND COALESCE(o.source_published_at, o.observed_at) < $6
+ORDER BY COALESCE(o.source_published_at, o.observed_at), r.observation_id;
+
+-- Source: Queries/catalog.sql
+PREPARE player_round_history(uuid, text, uuid, integer) AS
+SELECT r.* FROM statistic.results_scoring_round r
+JOIN public.events e ON e."eventsID" = r.event_id
+WHERE r.player_id = $1 AND ($2 IS NULL OR r.season_id = $2)
+  AND ($3 IS NULL OR r.event_id = $3)
+ORDER BY e.starts_on DESC NULLS LAST, r.event_id, r.round_number
+LIMIT LEAST(GREATEST(COALESCE($4, 100), 1), 500);
+
+-- Source: Queries/catalog.sql
+PREPARE event_round_ranking(uuid, smallint) AS
+SELECT rank() OVER (ORDER BY over_under) AS position, r.*
+FROM statistic.results_scoring_round r
+WHERE event_id = $1 AND round_number = $2 AND score IS NOT NULL AND over_under IS NOT NULL
+ORDER BY position, player_id;
+
 -- Source: Schemas/statistic/read.sql
 PREPARE statistic_player_registry(text) AS
 SELECT * FROM statistic.player_registry WHERE pgatour_id = $1;

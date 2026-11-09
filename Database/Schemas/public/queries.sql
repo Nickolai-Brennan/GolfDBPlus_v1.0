@@ -48,3 +48,43 @@ PREPARE schema_columns(text) AS
 SELECT table_name,ordinal_position,column_name,data_type,is_nullable,column_default
 FROM information_schema.columns WHERE table_schema=$1
 ORDER BY table_name,ordinal_position;
+
+-- Source: Queries/catalog.sql
+PREPARE player_directory(text, text, text, integer, integer) AS
+SELECT p.playerid, p.player_fullname, p.nationality_country, id.external_id AS pgatour_id
+FROM public.players_tracking p
+LEFT JOIN LATERAL (
+    SELECT m.external_id FROM intake.player_id_mapping m
+    WHERE m.player_id = p.playerid AND m.provider = 'pgatour'
+    ORDER BY (m.external_id IS DISTINCT FROM p."pgatourID"), m.external_id LIMIT 1
+) id ON true
+WHERE ($1 IS NULL OR strpos(lower(p.player_fullname), lower($1)) > 0)
+  AND ($2 IS NULL OR p.nationality_country = $2)
+  AND ($3 IS NULL OR EXISTS (
+      SELECT 1 FROM intake.player_id_mapping m
+      WHERE m.player_id = p.playerid AND m.provider = 'pgatour' AND m.external_id = $3))
+ORDER BY p.player_fullname, p.playerid
+LIMIT LEAST(GREATEST(COALESCE($4, 100), 1), 500)
+OFFSET GREATEST(COALESCE($5, 0), 0);
+
+-- Source: Queries/catalog.sql
+PREPARE course_directory(text, text, integer, integer) AS
+SELECT c."coursesID", c.course_name, c.country_code, c.location_text
+FROM public.courses c
+WHERE ($1 IS NULL OR strpos(lower(c.course_name), lower($1)) > 0)
+  AND ($2 IS NULL OR c.country_code = $2)
+ORDER BY c.course_name, c."coursesID"
+LIMIT LEAST(GREATEST(COALESCE($3, 100), 1), 500)
+OFFSET GREATEST(COALESCE($4, 0), 0);
+
+-- Source: Queries/catalog.sql
+PREPARE entity_content_search(text, uuid, text, integer) AS
+SELECT c.content_id, c.title, c.canonical_url, c.source_system, c.content_type, c.published_at
+FROM public.content_items c
+WHERE EXISTS (
+    SELECT 1 FROM public.content_entity_mentions m
+    WHERE m.content_id = c.content_id AND (m.entity_type,m.entity_id) = ($1,$2)
+      AND m.review_status = 'approved')
+  AND ($3 IS NULL OR c.search_vector @@ plainto_tsquery('english', $3))
+ORDER BY c.published_at DESC NULLS LAST, c.content_id
+LIMIT LEAST(GREATEST(COALESCE($4, 50), 1), 200);

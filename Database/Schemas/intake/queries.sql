@@ -84,3 +84,20 @@ ORDER BY observed_at,observation_id;
 PREPARE quarantined_records(bigint) AS
 SELECT record_key,reason,payload FROM intake.record
 WHERE observation_id=$1 AND state='quarantined' ORDER BY record_key;
+
+-- Source: Queries/catalog.sql
+PREPARE player_provider_ids(uuid) AS
+SELECT provider, external_id, observation_id
+FROM intake.player_id_mapping WHERE player_id = $1 ORDER BY provider, external_id;
+
+-- Source: Queries/catalog.sql
+PREPARE provider_stat_publication(text, text, text, uuid, smallint, bigint) AS
+SELECT s.*, p.player_fullname
+FROM intake.metric_id_mapping m
+JOIN analytics.player_statistics s
+  ON (s.metric_code,s.metric_version) = (m.metric_code,m.metric_version)
+JOIN intake.observation o ON o.observation_id = s.observation_id AND o.provider = m.provider
+JOIN public.players_tracking p ON p.playerid = s.player_id
+WHERE (m.provider,m.external_id,s.season_id,s.observation_id) = ($1,$2,$3,$6)
+  AND s.event_id IS NOT DISTINCT FROM $4 AND s.round_number IS NOT DISTINCT FROM $5
+ORDER BY p.player_fullname, s.player_id;

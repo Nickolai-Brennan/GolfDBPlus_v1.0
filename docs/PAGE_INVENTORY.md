@@ -2,6 +2,8 @@
 
 This audit covers the repository's `main` branch and the [static dashboard demo](https://github.com/Nickolai-Brennan/GolfDBPlus_v1.0/blob/0f49c59/demo/index.html) on `demo/golfdb-dashboard`. The demo has one HTML entry point with in-page navigation. Main contains schema, scripts, assets, and documentation. There is no application router or database-connected frontend on main.
 
+For current SQL coverage and source gaps, see the [page query guide](../Database/Queries/README.md).
+
 ## Existing demo views
 
 | View | Behavior in the demo | Data and gaps |

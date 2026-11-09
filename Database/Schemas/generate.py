@@ -52,7 +52,7 @@ def generate():
                 add(files, owner(match[1]), "views", source, sql)
             elif re.match(r"^(CREATE|ALTER)\s+(TABLE|VIEW|SCHEMA|INDEX|UNIQUE INDEX)\b", sql, re.I):
                 raise ValueError(f"Cannot classify definition in {source}: {sql[:100]}")
-    for name in ("intake", "promote", "read", "explore"):
+    for name in ("intake", "promote", "read", "explore", "catalog"):
         path = DATABASE / "Queries" / f"{name}.sql"
         source = path.relative_to(DATABASE)
         for sql in statements(path):

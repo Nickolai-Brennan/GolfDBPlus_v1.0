@@ -18,6 +18,7 @@ psql "$DATABASE_URL" -v ON_ERROR_STOP=1 \
 | 3 | [Incoming data](003_incoming_data.sql) | Staging, provider IDs, facts, outputs and reporting views. |
 | 4 | [Query views](004_query_views.sql) | Player par scoring and event and intake coverage. |
 | 5 | [Performance and statistics](005_performance_statistics.sql) | Scoring views, player round and shot tracking, and versioned predictability outputs. |
+| 6 | [Query catalog](006_query_catalog.sql) | Provider stat metadata, ranking publications and shot measurement reads. |
 
 Run the same installer for a database already on the UUID foundation. It adds tables and seeds mappings from the legacy columns. Future writes use the mapping tables. Review any provider IDs assigned independently in older pipelines before import. Installer roles need schema creation, table alteration and extension permissions where applicable.
 

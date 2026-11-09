@@ -3,3 +3,26 @@
 
 -- Source: Schema/005_performance_statistics.sql
 CREATE SCHEMA IF NOT EXISTS statistic;
+
+-- Source: Schema/006_query_catalog.sql
+CREATE TABLE IF NOT EXISTS statistic.provider_stat_catalog (
+    provider text NOT NULL,
+    external_id text NOT NULL CHECK (btrim(external_id) <> ''),
+    label text NOT NULL,
+    category text NOT NULL,
+    subcategory text NOT NULL,
+    PRIMARY KEY (provider, external_id)
+);
+
+-- Source: Schema/006_query_catalog.sql
+CREATE TABLE IF NOT EXISTS statistic.player_ranking_publication (
+    provider text NOT NULL,
+    ranking_code text NOT NULL,
+    scope_key text NOT NULL,
+    observation_id bigint REFERENCES intake.observation,
+    player_id uuid REFERENCES public.players_tracking,
+    position integer NOT NULL CHECK (position > 0),
+    position_display text,
+    points numeric,
+    PRIMARY KEY (provider, ranking_code, scope_key, observation_id, player_id)
+);

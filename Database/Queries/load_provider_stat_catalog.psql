@@ -1,0 +1,12 @@
+\set ON_ERROR_STOP on
+-- Run from the repository root. Preserve provider IDs and leading zeroes as text.
+BEGIN;
+CREATE TEMP TABLE pgatour_stat_seed (
+    external_id text PRIMARY KEY, label text NOT NULL, category text NOT NULL, subcategory text NOT NULL
+) ON COMMIT DROP;
+\copy pgatour_stat_seed FROM 'PGA-Tour-Data-API/data/stat_ids.csv' WITH (FORMAT csv, HEADER true)
+INSERT INTO statistic.provider_stat_catalog(provider, external_id, label, category, subcategory)
+SELECT 'pgatour', external_id, label, category, subcategory FROM pgatour_stat_seed
+ON CONFLICT (provider, external_id) DO UPDATE
+SET (label, category, subcategory) = (excluded.label, excluded.category, excluded.subcategory);
+COMMIT;

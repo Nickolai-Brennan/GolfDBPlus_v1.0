@@ -7,9 +7,9 @@
 | `intake` | [Tables](intake/tables.sql) | [Queries](intake/queries.sql) | [Views](intake/views.sql) |
 | `analytics` | [Tables](analytics/tables.sql) | [Queries](analytics/queries.sql) | [Views](analytics/views.sql) |
 | `performance` | [Tables](performance/tables.sql) | [Queries](performance/queries.sql) | [Views](performance/views.sql) |
-| `statistic` | [Schema declaration](statistic/tables.sql) | [Queries](statistic/queries.sql) | [Views](statistic/views.sql) |
+| `statistic` | [Tables](statistic/tables.sql) | [Queries](statistic/queries.sql) | [Views](statistic/views.sql) |
 
-The folders group definitions by owning schema and prepared queries by their main relation. The `statistic` schema exposes views over canonical tables. Its table file contains the schema declaration.
+The folders group definitions by owning schema and prepared queries by their main relation. The `statistic` schema exposes views over canonical tables and stores provider catalog metadata and ranking publications. See the [page query guide](../Queries/README.md) for source coverage and parameters.
 
 Install database objects through [install.psql](../Schema/install.psql). The numbered migrations control cross-schema dependencies, data seeds, and transactions. The table and view files here are generated references. Load a schema's query file in the same PostgreSQL session that will execute its prepared statements. The original query entry points remain in [Queries](../Queries). Load either the original prepared statements or their schema-organized copies per session to avoid duplicate names.
 

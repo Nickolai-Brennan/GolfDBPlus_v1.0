@@ -2,6 +2,56 @@
 -- Schema-organized reference. Use Database/Schema/install.psql to install database objects.
 -- PREPARE statements are scoped to the current database session.
 
+-- Source: Queries/catalog.sql
+PREPARE event_scorecard(uuid, uuid, smallint) AS
+SELECT * FROM performance.player_tracker_hole
+WHERE event_id = $1 AND player_id = $2 AND round_number = $3
+ORDER BY hole_number;
+
+-- Source: Queries/catalog.sql
+PREPARE shot_measurement_values(uuid, uuid, smallint, text, integer) AS
+SELECT * FROM performance.shot_measurement
+WHERE event_id = $1 AND ($2 IS NULL OR player_id = $2)
+  AND ($3 IS NULL OR round_number = $3) AND ($4 IS NULL OR measurement_code = $4)
+ORDER BY player_id, round_number, hole_number, shot_id, measurement_code
+LIMIT LEAST(GREATEST(COALESCE($5, 100), 1), 2000);
+
+-- Source: Queries/catalog.sql
+PREPARE shot_measurement_summary(uuid, uuid, smallint, text) AS
+SELECT measurement_code, unit, count(*) AS samples, min(value) AS minimum,
+       avg(value) AS mean, percentile_disc(0.5) WITHIN GROUP (ORDER BY value) AS median,
+       max(value) AS maximum
+FROM performance.shot_measurement
+WHERE event_id = $1 AND ($2 IS NULL OR player_id = $2)
+  AND ($3 IS NULL OR round_number = $3) AND ($4 IS NULL OR measurement_code = $4)
+GROUP BY measurement_code, unit ORDER BY measurement_code, unit;
+
+-- Source: Queries/catalog.sql
+PREPARE shot_map_points(uuid, uuid, smallint, smallint, integer) AS
+SELECT shot_id, player_id, course_id, round_number, hole_number, coordinate_frame,
+       start_coordinates, end_coordinates, start_shot_class, hole_finished
+FROM performance.player_tracker_shot_tourcast
+WHERE event_id = $1 AND ($2 IS NULL OR player_id = $2)
+  AND ($3 IS NULL OR round_number = $3) AND ($4 IS NULL OR hole_number = $4)
+  AND (start_coordinates IS NOT NULL OR end_coordinates IS NOT NULL)
+ORDER BY player_id, round_number, hole_number, shot_id
+LIMIT LEAST(GREATEST(COALESCE($5, 100), 1), 2000);
+
+-- Source: Queries/catalog.sql
+PREPARE event_shot_measurement_ranking(uuid, text, text, bigint, text, integer) AS
+WITH totals AS (
+    SELECT player_id, count(*) AS samples, avg(value) AS mean
+    FROM performance.shot_measurement
+    WHERE (event_id,measurement_code,unit,observation_id) = ($1,$2,$3,$4)
+      AND $5 IN ('asc','desc')
+    GROUP BY player_id
+    HAVING count(*) >= GREATEST(COALESCE($6, 1), 1)
+)
+SELECT rank() OVER (ORDER BY CASE WHEN $5 = 'asc' THEN t.mean ELSE -t.mean END) AS position,
+       t.*, p.player_fullname
+FROM totals t JOIN public.players_tracking p ON p.playerid = t.player_id
+ORDER BY position, t.player_id;
+
 -- Source: Schemas/performance/read.sql
 PREPARE performance_round_totals(uuid, uuid) AS
 SELECT * FROM performance.player_tracker_round_totals

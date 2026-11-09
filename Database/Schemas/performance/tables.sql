@@ -85,3 +85,16 @@ CREATE TABLE IF NOT EXISTS performance.shot_performance_predictability_output (
     CHECK (perfect_probability + probable_probability + worst_probability = 1),
     CHECK (shot_projection_difficulty_warning_score IS DISTINCT FROM 10 OR perfect_probability IS NULL OR perfect_probability = 0)
 );
+
+-- Source: Schema/006_query_catalog.sql
+CREATE TABLE IF NOT EXISTS performance.shot_source_measurement (
+    shot_id uuid REFERENCES performance.player_tracker_shot_tourcast,
+    measurement_code text CHECK (measurement_code IN (
+        'ball_speed', 'spin_rate', 'spin_axis', 'launch_angle',
+        'apex_range', 'apex_side', 'flight_time'
+    )),
+    observation_id bigint REFERENCES intake.observation,
+    unit text NOT NULL CHECK (btrim(unit) <> ''),
+    value numeric NOT NULL,
+    PRIMARY KEY (shot_id, measurement_code, observation_id)
+);

@@ -282,3 +282,67 @@ ORDER BY m.hole_number,o.observed_at,o.observation_id;
 -- Source: Queries/explore.sql
 PREPARE event_coverage(text) AS
 SELECT * FROM analytics.event_data_coverage WHERE season_id=$1 ORDER BY event_name,event_id;
+
+-- Source: Queries/catalog.sql
+PREPARE event_directory(text, text, date, date, integer, integer) AS
+SELECT * FROM analytics.schedule_tour_season s
+WHERE ($1 IS NULL OR s.season_id = $1)
+  AND ($2 IS NULL OR strpos(lower(s.event_name), lower($2)) > 0)
+  AND ($3 IS NULL OR s.ends_on >= $3)
+  AND ($4 IS NULL OR s.starts_on <= $4)
+ORDER BY s.starts_on NULLS LAST, s.event_name, s.event_id
+LIMIT LEAST(GREATEST(COALESCE($5, 100), 1), 500)
+OFFSET GREATEST(COALESCE($6, 0), 0);
+
+-- Source: Queries/catalog.sql
+PREPARE metric_definition_search(text) AS
+SELECT * FROM analytics.metric_definition
+WHERE $1 IS NULL OR metric_code = $1 OR strpos(lower(label), lower($1)) > 0
+ORDER BY metric_code, version DESC;
+
+-- Source: Queries/catalog.sql
+PREPARE metric_publication(text, integer, text, uuid, smallint, bigint) AS
+SELECT s.*, p.player_fullname
+FROM analytics.player_statistics s
+JOIN public.players_tracking p ON p.playerid = s.player_id
+WHERE (s.metric_code,s.metric_version,s.season_id,s.observation_id) = ($1,$2,$3,$6)
+  AND s.event_id IS NOT DISTINCT FROM $4 AND s.round_number IS NOT DISTINCT FROM $5
+ORDER BY p.player_fullname, s.player_id;
+
+-- Source: Queries/catalog.sql
+PREPARE metric_leaderboard(text, integer, text, uuid, smallint, bigint, text, integer) AS
+SELECT rank() OVER metric_order AS position, s.player_id, p.player_fullname,
+       s.numeric_value, s.sample_count, s.numerator, s.denominator
+FROM analytics.player_statistics s
+JOIN public.players_tracking p ON p.playerid = s.player_id
+WHERE (s.metric_code,s.metric_version,s.season_id,s.observation_id) = ($1,$2,$3,$6)
+  AND s.event_id IS NOT DISTINCT FROM $4 AND s.round_number IS NOT DISTINCT FROM $5
+  AND s.numeric_value IS NOT NULL AND $7 IN ('asc','desc')
+WINDOW metric_order AS (ORDER BY CASE WHEN $7 = 'asc' THEN s.numeric_value ELSE -s.numeric_value END)
+ORDER BY position, s.player_id
+LIMIT LEAST(GREATEST(COALESCE($8, 100), 1), 500);
+
+-- Source: Queries/catalog.sql
+PREPARE player_metric_series(uuid, text, integer, text, uuid, smallint, timestamptz, timestamptz) AS
+SELECT s.*, o.provider, o.source_published_at, o.observed_at
+FROM analytics.player_statistics s JOIN intake.observation o USING (observation_id)
+WHERE (s.player_id,s.metric_code,s.metric_version,s.season_id) = ($1,$2,$3,$4)
+  AND s.event_id IS NOT DISTINCT FROM $5 AND s.round_number IS NOT DISTINCT FROM $6
+  AND COALESCE(o.source_published_at, o.observed_at) >= $7
+  AND COALESCE(o.source_published_at, o.observed_at) < $8
+ORDER BY COALESCE(o.source_published_at, o.observed_at), s.observation_id;
+
+-- Source: Queries/catalog.sql
+PREPARE event_projection_outputs(uuid, text, text, uuid) AS
+SELECT o.*, p.player_fullname
+FROM analytics.player_output o JOIN public.players_tracking p ON p.playerid = o.player_id
+WHERE (o.event_id,o.model_code,o.model_version,o.run_id) = ($1,$2,$3,$4)
+ORDER BY o.output_code, p.player_fullname, o.player_id;
+
+-- Source: Queries/catalog.sql
+PREPARE event_hole_difficulty_ranking(uuid, smallint, integer) AS
+SELECT rank() OVER (ORDER BY avg_to_par DESC) AS difficulty_rank, m.*
+FROM analytics.course_hole_metrics m
+WHERE event_id = $1 AND round_number = $2 AND avg_to_par IS NOT NULL
+  AND par_sample_count >= GREATEST(COALESCE($3, 1), 1)
+ORDER BY difficulty_rank, course_id, hole_number;

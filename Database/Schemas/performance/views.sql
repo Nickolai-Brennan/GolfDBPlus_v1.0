@@ -195,3 +195,27 @@ SELECT s.player_id, s.event_id, s.course_id, s.round_number, s.hole_number,
        o.post_shot_sg_percent - o.pre_shot_sg_percent AS sg_change_percentage_points
 FROM performance.player_tracker_shot_tourcast s
 JOIN performance.shot_performance_predictability_output o USING (shot_id);
+
+-- Source: Schema/006_query_catalog.sql
+CREATE OR REPLACE VIEW performance.shot_measurement AS
+SELECT s.shot_id, s.event_id, s.player_id, s.course_id, s.round_number,
+       s.hole_number, s.start_shot_class, s.observation_id,
+       m.measurement_code, m.unit, m.value
+FROM performance.player_tracker_shot_tourcast s
+CROSS JOIN LATERAL (VALUES
+    ('travel_distance', s.shot_distance_unit, s.shot_distance),
+    ('start_distance_to_pin', 'yd', s.start_distance_to_pin_yards),
+    ('end_distance_to_pin', 'yd', s.shot_outcome_distance_to_pin_yards),
+    ('swing_speed', 'mph', s.shot_swing_speed_mph),
+    ('apex_height', 'ft', s.shot_apex_feet),
+    ('smash_factor', 'ratio', s.shot_smash_rate),
+    ('launch_direction', 'deg', s.shot_direction_degrees),
+    ('swing_plane', 'deg', s.shot_plane_degrees)
+) m(measurement_code, unit, value)
+WHERE m.value IS NOT NULL
+UNION ALL
+SELECT s.shot_id, s.event_id, s.player_id, s.course_id, s.round_number,
+       s.hole_number, s.start_shot_class, m.observation_id,
+       m.measurement_code, m.unit, m.value
+FROM performance.shot_source_measurement m
+JOIN performance.player_tracker_shot_tourcast s USING (shot_id);
