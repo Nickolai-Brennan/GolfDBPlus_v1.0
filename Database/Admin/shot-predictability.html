@@ -102,7 +102,8 @@ function render(row) {
   for (const key of ['perfect','probable','worst']) {
     const value = numeric(row[key + '_probability']);
     const label = document.createElement('label');
-    label.textContent = key + ' · ' + (value === null ? 'Unavailable' : (100 * value).toFixed(1) + '%');
+    const meaning = typeof row.factors?.[key] === 'string' ? ' (' + row.factors[key] + ')' : '';
+    label.textContent = key + meaning + ' · ' + (value === null ? 'Unavailable' : (100 * value).toFixed(1) + '%');
     if (value !== null && value >= 0 && value <= 1) {
       const meter = document.createElement('meter');
       meter.max = 1;

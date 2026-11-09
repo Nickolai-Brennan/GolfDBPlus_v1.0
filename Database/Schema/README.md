@@ -54,6 +54,8 @@ Filter season-specific results with `season_id = '2026-PGA'`. Round and event sc
 
 The [2026 sources](../../Data/Source-Files/README.md) do not establish every requested fact. Preserve repeated source shot keys in staging pending disambiguation. The snapshot does not establish club selection, swing plane, shot shape, hole handicap, weather impact or player wellness for every shot. Use independently verified sources for those fields. Official finish, earnings and points come from the official result publication.
 
+See [Verified 2026 archive replay](../Import/README.md) for the course and John Deere Classic import and the calibrated putt model.
+
 ### Shot model display
 
 Open [shot-predictability.html](../Admin/shot-predictability.html) in a browser. Save the JSON value from the query below as a file and load it with the page's file picker. Add event, round or player predicates to narrow the export.

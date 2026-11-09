@@ -1,0 +1,50 @@
+{
+  "fit_putts": 201367,
+  "calibration_putts": 42418,
+  "holdout_putts": 159114,
+  "holdout_events": 16,
+  "temperature": 1.033206679514182,
+  "holdout_log_loss": 0.45797660910235877,
+  "uncalibrated_log_loss": 0.4581519941583306,
+  "baseline_log_loss": 0.8587522127639078,
+  "holdout_brier": 0.2766617225393559,
+  "baseline_brier": 0.5211054241430165,
+  "classwise_ece": [
+    0.013538165028934715,
+    0.00882777042585724,
+    0.009274488730056497
+  ],
+  "model_version": "putt-outcomes-2026-v1",
+  "as_of": "2026-07-01T00:00:00Z",
+  "coefficients": [
+    [
+      -7.560634040386776,
+      2.1145776236698146,
+      -0.2468173457071397
+    ],
+    [
+      7.553032819840386,
+      -2.1973950269389193,
+      0.20508166001637118
+    ],
+    [
+      0.007601220544623848,
+      0.08281740327218617,
+      0.04173568569285833
+    ]
+  ],
+  "intercepts": [
+    9.980158207898054,
+    -7.261693194525281,
+    -2.7184650133636397
+  ],
+  "replay_rounds": 445,
+  "replay_holes": 8010,
+  "replay_results": 145,
+  "replay_shots": 30632,
+  "replay_predictions": 12932,
+  "ambiguous_archive_rows": 16662,
+  "course_rows": 3258,
+  "archive_shot_sha256": "d525f4597bfb52bd078bcc97119b0b355984a4c52d515e745416f691bbd84e71",
+  "excluded_nonregulation_course_rows": 18
+}
